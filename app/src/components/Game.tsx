@@ -25,7 +25,7 @@ export function Game() {
   const character = useReactions(s);
   const loading = s.phase === "loading" || s.phase === "error" || !s.meta;
   const uiRef = useRef<HTMLDivElement>(null);
-  const phoneSize = usePhoneMascotSize(uiRef, s.phase);
+  const phoneSize = usePhoneMascotSize(uiRef);
 
   return (
     <div className="mx-auto flex min-h-0 w-full max-w-7xl flex-col lg:block">

@@ -34,7 +34,15 @@ export function unlockInlinePlayback(pool: Iterable<HTMLVideoElement | null | un
   for (const v of pool) {
     if (!v) continue;
     v.muted = true;
+    // Don't interrupt an idle loop that's already playing — play+pause was restarting it on every tap.
+    if (v.loop && !v.paused && v.currentTime > 0) continue;
     const attempt = v.play();
-    if (attempt) void attempt.then(() => v.pause()).catch(() => undefined);
+    if (attempt)
+      void attempt
+        .then(() => {
+          if (v.loop) return;
+          v.pause();
+        })
+        .catch(() => undefined);
   }
 }

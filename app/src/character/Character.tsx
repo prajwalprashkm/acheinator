@@ -148,7 +148,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
     then();
   }
 
-  function startIdleFloat() {
+  function resumeIdleFloat(fromBeginning = false) {
     clearFloatTimer();
     if (reducedMotion() || busyRef.current !== null) return;
     const v = videos.current[IDLE_LOOP];
@@ -156,8 +156,8 @@ export function Character({ ref, loading, className = "", style }: Props) {
 
     const begin = () => {
       v.loop = true;
-      v.currentTime = 0;
       v.playbackRate = PLAYBACK_RATE;
+      if (fromBeginning || v.ended) v.currentTime = 0;
       if (mustRevealVideoBeforePlay()) setSurface(IDLE_LOOP);
       v.play().catch(() => {
         pendingUnlockRef.current = true;
@@ -167,6 +167,10 @@ export function Character({ ref, loading, className = "", style }: Props) {
 
     if (v.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) begin();
     else v.addEventListener("loadeddata", () => begin(), { once: true });
+  }
+
+  function startIdleFloat() {
+    resumeIdleFloat(true);
   }
 
   function onIdleFloatPlaying() {
@@ -291,22 +295,16 @@ export function Character({ ref, loading, className = "", style }: Props) {
       if (reducedMotion() || busyRef.current !== null) return;
       const v = videos.current[IDLE_LOOP];
       if (!v) return;
+      const idleWasPlaying = !v.paused && v.currentTime > 0;
       if (!poolUnlockedRef.current) {
         unlockInlinePlayback(Object.values(videos.current));
         poolUnlockedRef.current = true;
       }
+      if (idleWasPlaying && !v.paused) return;
       const stuck = pendingUnlockRef.current || v.paused || v.ended;
       if (!stuck) return;
       pendingUnlockRef.current = false;
-      v.loop = true;
-      v.muted = true;
-      v.currentTime = 0;
-      v.playbackRate = PLAYBACK_RATE;
-      if (mustRevealVideoBeforePlay()) setSurface(IDLE_LOOP);
-      v.play().catch(() => {
-        pendingUnlockRef.current = true;
-        setSurface("still");
-      });
+      resumeIdleFloat(false);
     };
     document.addEventListener("touchstart", unlock, { passive: true, capture: true });
     document.addEventListener("click", unlock);

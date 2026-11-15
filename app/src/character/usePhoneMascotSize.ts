@@ -11,7 +11,7 @@ const GAP_PX = 10;
  * On phones, picks a square mascot size so character + UI fit in the viewport without
  * overlapping. On lg+, returns undefined (column width controls size).
  */
-export function usePhoneMascotSize(uiRef: RefObject<HTMLElement | null>, layoutKey?: unknown) {
+export function usePhoneMascotSize(uiRef: RefObject<HTMLElement | null>) {
   const [size, setSize] = useState<number | undefined>(undefined);
 
   useEffect(() => {
@@ -41,11 +41,11 @@ export function usePhoneMascotSize(uiRef: RefObject<HTMLElement | null>, layoutK
         return;
       }
 
-      if (maxWithoutOverlap >= want * 0.85) {
-        setSize(want);
-      } else {
-        setSize(Math.max(120, Math.min(want, maxWithoutOverlap)));
-      }
+      const next =
+        maxWithoutOverlap >= want * 0.85
+          ? want
+          : Math.max(120, Math.min(want, maxWithoutOverlap));
+      setSize((prev) => (prev !== undefined && Math.abs(prev - next) < 3 ? prev : next));
     };
 
     fit();
@@ -62,7 +62,7 @@ export function usePhoneMascotSize(uiRef: RefObject<HTMLElement | null>, layoutK
       window.removeEventListener("resize", fit);
       mq.removeEventListener("change", fit);
     };
-  }, [uiRef, layoutKey]);
+  }, [uiRef]);
 
   return size;
 }
