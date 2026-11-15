@@ -2,7 +2,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { CLIPS, LOADING_LOOP, REACTIONS, pickClip, type Moment } from "../src/character/config";
+import { CLIPS, IDLE_LOOP, LOADING_LOOP, REACTIONS, pickClip, type Moment } from "../src/character/config";
 
 const DIR = join(__dirname, "..", "public", "character");
 
@@ -18,9 +18,11 @@ describe("character config", () => {
     expect(existsSync(join(DIR, `${clip}.mov`))).toBe(true);
   });
 
-  it("has the idle image and a valid loading loop", () => {
+  it("has the idle image, idle loop, and loading clip", () => {
     expect(existsSync(join(DIR, "idle.png"))).toBe(true);
+    expect(CLIPS).toContain(IDLE_LOOP);
     if (LOADING_LOOP) expect(CLIPS).toContain(LOADING_LOOP);
+    expect(pickClip("answer", 0)).not.toBe(IDLE_LOOP);
   });
 
   it("picks clips in proportion to their chances", () => {

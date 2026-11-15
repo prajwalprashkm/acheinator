@@ -1,57 +1,72 @@
 /**
- * Which animation the character plays, and when. Edit this file to change them.
+ * Which animation the character plays, and when — edit this file; nothing auto-detects clip names.
  *
- * Clips live in public/character/ as <id>.webm (with alpha) plus <id>.mov (HEVC with alpha,
- * for Safari / iPhone). To replace them, put new files in ../animations/symptomator/clips/
- * and run `npm run animations`, then list the ids below.
+ * Workflow:
+ *   1. Put or update clips in animations/symptomator/clips/<id>.webm (+ idle PNG in reference/).
+ *   2. From app/: npm run animations  → copies into public/character/ and builds Safari .mov files.
+ *   3. List every <id>.webm here in CLIPS / GESTURE_CLIPS (and wire REACTIONS if it's a gesture).
+ *
+ * The app never reads animations/ at runtime; only public/character/ is deployed (see next build).
  */
 
-export const CLIPS = ["thinking-chin", "idea", "confused", "thumbs-up", "backflip"] as const;
+/** Looping rest animation (6 s, up–down float). Not used for answer reactions. */
+export const IDLE_LOOP = "idle-float" as const;
+
+/** One-shot reactions. */
+export const GESTURE_CLIPS = ["thinking-chin", "idea", "confused", "thumbs-up", "backflip"] as const;
+
+export const CLIPS = [IDLE_LOOP, ...GESTURE_CLIPS] as const;
 export type ClipId = (typeof CLIPS)[number];
+export type GestureClipId = (typeof GESTURE_CLIPS)[number];
 
 /** Moments in the game that can start a clip (see Game.tsx). */
 export type Moment = "answer" | "suspicious" | "result" | "confidentResult";
 
 export interface Reaction {
   /** Chance of each clip, from 0 to 1. Whatever is left over is the chance of doing nothing. */
-  chances: Partial<Record<ClipId, number>>;
+  chances: Partial<Record<GestureClipId, number>>;
 }
 
 export const REACTIONS: Record<Moment, Reaction> = {
-  // After every yes / no / don't know: about half the time, one of these.
   answer: {
     chances: {
-      "thinking-chin": 0.15,
-      idea: 0.08,
+      "thinking-chin": 0.12,
+      idea: 0.11,
       "thumbs-up": 0.08,
       confused: 0.06,
       backflip: 0.01,
     },
   },
-  // "Your answers don't add up" pause
   suspicious: { chances: { confused: 1 } },
-  // A guess is shown...
   result: { chances: { idea: 1 } },
-  // ...or a guess at least this confident (see CONFIDENT below)
   confidentResult: { chances: { "thumbs-up": 1 } },
 };
 
-/** Top guess probability that counts as a confident result. */
 export const CONFIDENT = 0.7;
 
-/** Looped while the model downloads. null for the still image. */
-export const LOADING_LOOP: ClipId | null = "thinking-chin";
+export const LOADING_LOOP: GestureClipId | null = "thinking-chin";
 
-/** 1 is normal speed. The clips are about 6 s long, with the gesture in the middle 2 to 3 s. */
 export const PLAYBACK_RATE = 1;
 
-/** Cross-fade between the still image and a clip, in ms. */
-export const FADE_MS = 150;
+/** Length of idle-float.webm (seconds). */
+export const IDLE_DURATION_SEC = 6;
 
-/** Picks a clip for a moment, or null for none. `random` is in [0, 1). */
-export function pickClip(moment: Moment, random = Math.random()): ClipId | null {
+/** Seconds in the idle loop that match idle.png — safe to cut to a gesture. */
+export const IDLE_REST_TIMES = [0, 3] as const;
+export const IDLE_REST_TOLERANCE_SEC = 0.22;
+
+/** After a gesture, chance we hold idle.png before starting idle-float again. */
+export const IDLE_STILL_AFTER_GESTURE = 0.45;
+
+/** On first load (after the model), chance we start on idle.png instead of idle-float. */
+export const IDLE_STILL_ON_START = 0.35;
+
+/** If we're holding the still, start idle-float automatically after this long anyway. */
+export const IDLE_STILL_MAX_MS = 12_000;
+
+export function pickClip(moment: Moment, random = Math.random()): GestureClipId | null {
   let r = random;
-  for (const [clip, p] of Object.entries(REACTIONS[moment].chances) as [ClipId, number][]) {
+  for (const [clip, p] of Object.entries(REACTIONS[moment].chances) as [GestureClipId, number][]) {
     if (r < p) return clip;
     r -= p;
   }

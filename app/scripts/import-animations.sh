@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Copies the character's clips from animations/ into public/character/ for the site.
+# Source of truth: ../animations/symptomator (or pass another folder).
+# The site only serves files under app/public/character/ — this script copies them there.
 #
 #   npm run animations                      # from ../animations/symptomator
 #   npm run animations -- path/to/folder    # any folder laid out the same way
@@ -33,4 +34,10 @@ for webm in "${clips[@]}"; do
 done
 
 ffmpeg -hide_banner -loglevel error -y -i "$SRC/reference/symptomator-idle.png" -vf scale=480:480 "$OUT/idle.png"
-echo "wrote ${#clips[@]} clips and idle.png to $OUT"
+ids=()
+for webm in "${clips[@]}"; do ids+=("$(basename "$webm" .webm)"); done
+echo "wrote ${#clips[@]} clips and idle.png to app/$OUT"
+echo "  ids: ${ids[*]}"
+echo ""
+echo "config.ts does not read this folder. If you added or removed an id, edit src/character/config.ts:"
+echo "  CLIPS, GESTURE_CLIPS, IDLE_LOOP, and REACTIONS (chances / triggers)."
