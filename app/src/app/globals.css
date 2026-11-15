@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens, taken from the logo: warm gold fill, charcoal outline, warm
+ * off-white paper. Components only use these semantic names (bg-surface,
+ * border-outline, bg-accent...), so restyling is done here.
+ */
+:root {
+  --bg: #fbf8f1;
+  --surface: #ffffff;
+  --surface-2: #f3eee3;
+  --ink: #262422;
+  --muted: #69635a;
+  --line: #e4dccd;
+  --outline: #4a4743;
+  --accent: #ffc94d;
+  --accent-strong: #f6b929;
+  --accent-ink: #262422;
+  --focus: #262422;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1d1b18;
+    --surface: #262320;
+    --surface-2: #322e29;
+    --ink: #f4efe6;
+    --muted: #b3aa9b;
+    --line: #3b3732;
+    --outline: #6a635a;
+    --accent: #ffc94d;
+    --accent-strong: #ffd572;
+    --accent-ink: #1d1b18;
+    --focus: #ffc94d;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-outline: var(--outline);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-ink: var(--accent-ink);
+  --color-focus: var(--focus);
+  --font-sans: "Atkinson Hyperlegible Next Variable", ui-sans-serif, system-ui, sans-serif;
+  --radius-card: 0.75rem;
+  --radius-control: 0.5rem;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

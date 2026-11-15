@@ -1,0 +1,3302 @@
+{
+ "abdominal aortic aneurysm": {
+  "description": null,
+  "precautions": []
+ },
+ "abdominal hernia": {
+  "description": null,
+  "precautions": []
+ },
+ "abscess of nose": {
+  "description": null,
+  "precautions": []
+ },
+ "abscess of the lung": {
+  "description": null,
+  "precautions": []
+ },
+ "abscess of the pharynx": {
+  "description": null,
+  "precautions": []
+ },
+ "acanthosis nigricans": {
+  "description": null,
+  "precautions": []
+ },
+ "acariasis": {
+  "description": null,
+  "precautions": []
+ },
+ "achalasia": {
+  "description": null,
+  "precautions": []
+ },
+ "acne": {
+  "description": "Acne vulgaris is the formation of comedones, papules, pustules, nodules, and/or cysts as a result of obstruction and inflammation of pilosebaceous units (hair follicles and their accompanying sebaceous gland). Acne develops on the face and upper trunk. It most often affects adolescents.",
+  "precautions": [
+   "bath twice",
+   "avoid fatty spicy food",
+   "drink plenty of water",
+   "avoid too many products"
+  ]
+ },
+ "actinic keratosis": {
+  "description": null,
+  "precautions": []
+ },
+ "acute bronchiolitis": {
+  "description": null,
+  "precautions": []
+ },
+ "acute bronchitis": {
+  "description": null,
+  "precautions": []
+ },
+ "acute bronchospasm": {
+  "description": null,
+  "precautions": []
+ },
+ "acute fatty liver of pregnancy (aflp)": {
+  "description": null,
+  "precautions": []
+ },
+ "acute glaucoma": {
+  "description": null,
+  "precautions": []
+ },
+ "acute kidney injury": {
+  "description": null,
+  "precautions": []
+ },
+ "acute otitis media": {
+  "description": null,
+  "precautions": []
+ },
+ "acute pancreatitis": {
+  "description": null,
+  "precautions": []
+ },
+ "acute respiratory distress syndrome (ards)": {
+  "description": null,
+  "precautions": []
+ },
+ "acute sinusitis": {
+  "description": null,
+  "precautions": []
+ },
+ "acute stress reaction": {
+  "description": null,
+  "precautions": []
+ },
+ "adhesive capsulitis of the shoulder": {
+  "description": null,
+  "precautions": []
+ },
+ "adjustment reaction": {
+  "description": null,
+  "precautions": []
+ },
+ "adrenal adenoma": {
+  "description": null,
+  "precautions": []
+ },
+ "adrenal cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "alcohol abuse": {
+  "description": null,
+  "precautions": []
+ },
+ "alcohol intoxication": {
+  "description": null,
+  "precautions": []
+ },
+ "alcohol withdrawal": {
+  "description": null,
+  "precautions": []
+ },
+ "alcoholic liver disease": {
+  "description": "Alcoholic hepatitis is a diseased, inflammatory condition of the liver caused by heavy alcohol consumption over an extended period of time. It's also aggravated by binge drinking and ongoing alcohol use. If you develop this condition, you must stop drinking alcohol",
+  "precautions": [
+   "stop alcohol consumption",
+   "consult doctor",
+   "medication",
+   "follow up"
+  ]
+ },
+ "allergy": {
+  "description": "An allergy is an immune system response to a foreign substance that's not typically harmful to your body.They can include certain foods, pollen, or pet dander. Your immune system's job is to keep you healthy by fighting harmful pathogens.",
+  "precautions": [
+   "apply calamine",
+   "cover area with bandage",
+   "use ice to compress itching"
+  ]
+ },
+ "allergy to animals": {
+  "description": null,
+  "precautions": []
+ },
+ "alopecia": {
+  "description": null,
+  "precautions": []
+ },
+ "alzheimer disease": {
+  "description": null,
+  "precautions": []
+ },
+ "amblyopia": {
+  "description": null,
+  "precautions": []
+ },
+ "amyloidosis": {
+  "description": null,
+  "precautions": []
+ },
+ "amyotrophic lateral sclerosis (als)": {
+  "description": null,
+  "precautions": []
+ },
+ "anal fissure": {
+  "description": null,
+  "precautions": []
+ },
+ "anal fistula": {
+  "description": null,
+  "precautions": []
+ },
+ "anemia": {
+  "description": null,
+  "precautions": []
+ },
+ "anemia due to chronic kidney disease": {
+  "description": null,
+  "precautions": []
+ },
+ "anemia due to malignancy": {
+  "description": null,
+  "precautions": []
+ },
+ "anemia of chronic disease": {
+  "description": null,
+  "precautions": []
+ },
+ "angina": {
+  "description": null,
+  "precautions": []
+ },
+ "ankylosing spondylitis": {
+  "description": null,
+  "precautions": []
+ },
+ "anxiety": {
+  "description": null,
+  "precautions": []
+ },
+ "aortic valve disease": {
+  "description": null,
+  "precautions": []
+ },
+ "aphakia": {
+  "description": null,
+  "precautions": []
+ },
+ "aphthous ulcer": {
+  "description": null,
+  "precautions": []
+ },
+ "aplastic anemia": {
+  "description": null,
+  "precautions": []
+ },
+ "appendicitis": {
+  "description": null,
+  "precautions": []
+ },
+ "arrhythmia": {
+  "description": null,
+  "precautions": []
+ },
+ "arthritis": {
+  "description": "Arthritis is the swelling and tenderness of one or more of your joints. The main symptoms of arthritis are joint pain and stiffness, which typically worsen with age. The most common types of arthritis are osteoarthritis and rheumatoid arthritis.",
+  "precautions": [
+   "exercise",
+   "use hot and cold therapy",
+   "try acupuncture",
+   "massage"
+  ]
+ },
+ "arthritis of the hip": {
+  "description": null,
+  "precautions": []
+ },
+ "ascending cholangitis": {
+  "description": null,
+  "precautions": []
+ },
+ "asperger syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "aspergillosis": {
+  "description": null,
+  "precautions": []
+ },
+ "asthma": {
+  "description": "Bronchial asthma is a medical condition which causes the airway path of the lungs to swell and narrow. Due to this swelling, the air path produces excess mucus making it hard to breathe, which results in coughing, short breath, and wheezing. The disease is chronic and interferes with daily working.",
+  "precautions": [
+   "switch to loose cloothing",
+   "take deep breaths",
+   "get away from trigger",
+   "seek help"
+  ]
+ },
+ "astigmatism": {
+  "description": null,
+  "precautions": []
+ },
+ "atelectasis": {
+  "description": null,
+  "precautions": []
+ },
+ "athlete's foot": {
+  "description": null,
+  "precautions": []
+ },
+ "atonic bladder": {
+  "description": null,
+  "precautions": []
+ },
+ "atrial fibrillation": {
+  "description": null,
+  "precautions": []
+ },
+ "atrial flutter": {
+  "description": null,
+  "precautions": []
+ },
+ "atrophic skin condition": {
+  "description": null,
+  "precautions": []
+ },
+ "atrophic vaginitis": {
+  "description": null,
+  "precautions": []
+ },
+ "atrophy of the corpus cavernosum": {
+  "description": null,
+  "precautions": []
+ },
+ "attention deficit hyperactivity disorder (adhd)": {
+  "description": null,
+  "precautions": []
+ },
+ "autism": {
+  "description": null,
+  "precautions": []
+ },
+ "autonomic nervous system disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "avascular necrosis": {
+  "description": null,
+  "precautions": []
+ },
+ "balanitis": {
+  "description": null,
+  "precautions": []
+ },
+ "bell palsy": {
+  "description": null,
+  "precautions": []
+ },
+ "benign kidney cyst": {
+  "description": null,
+  "precautions": []
+ },
+ "benign paroxysmal positional vertigo (bppv)": {
+  "description": "Benign paroxysmal positional vertigo (BPPV) is one of the most common causes of vertigo \u2014 the sudden sensation that you're spinning or that the inside of your head is spinning. Benign paroxysmal positional vertigo causes brief episodes of mild to intense dizziness.",
+  "precautions": [
+   "lie down",
+   "avoid sudden change in body",
+   "avoid abrupt head movment",
+   "relax"
+  ]
+ },
+ "benign prostatic hyperplasia (bph)": {
+  "description": null,
+  "precautions": []
+ },
+ "benign vaginal discharge (leukorrhea)": {
+  "description": null,
+  "precautions": []
+ },
+ "bipolar disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "birth trauma": {
+  "description": null,
+  "precautions": []
+ },
+ "bladder cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "bladder disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "bladder obstruction": {
+  "description": null,
+  "precautions": []
+ },
+ "blepharitis": {
+  "description": null,
+  "precautions": []
+ },
+ "blepharospasm": {
+  "description": null,
+  "precautions": []
+ },
+ "bone cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "bone disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "bone spur of the calcaneous": {
+  "description": null,
+  "precautions": []
+ },
+ "brachial neuritis": {
+  "description": null,
+  "precautions": []
+ },
+ "brain cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "breast cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "breast cyst": {
+  "description": null,
+  "precautions": []
+ },
+ "breast infection (mastitis)": {
+  "description": null,
+  "precautions": []
+ },
+ "broken tooth": {
+  "description": null,
+  "precautions": []
+ },
+ "bunion": {
+  "description": null,
+  "precautions": []
+ },
+ "burn": {
+  "description": null,
+  "precautions": []
+ },
+ "bursitis": {
+  "description": null,
+  "precautions": []
+ },
+ "callus": {
+  "description": null,
+  "precautions": []
+ },
+ "carbon monoxide poisoning": {
+  "description": null,
+  "precautions": []
+ },
+ "carcinoid syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "cardiac arrest": {
+  "description": null,
+  "precautions": []
+ },
+ "cardiomyopathy": {
+  "description": null,
+  "precautions": []
+ },
+ "carpal tunnel syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "cat scratch disease": {
+  "description": null,
+  "precautions": []
+ },
+ "cataract": {
+  "description": null,
+  "precautions": []
+ },
+ "celiac disease": {
+  "description": null,
+  "precautions": []
+ },
+ "cellulitis or abscess of mouth": {
+  "description": null,
+  "precautions": []
+ },
+ "central atherosclerosis": {
+  "description": null,
+  "precautions": []
+ },
+ "central retinal artery or vein occlusion": {
+  "description": null,
+  "precautions": []
+ },
+ "cerebral edema": {
+  "description": null,
+  "precautions": []
+ },
+ "cerebral palsy": {
+  "description": null,
+  "precautions": []
+ },
+ "cervical cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "cervical disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "cervicitis": {
+  "description": null,
+  "precautions": []
+ },
+ "chalazion": {
+  "description": null,
+  "precautions": []
+ },
+ "chickenpox": {
+  "description": "Chickenpox is a highly contagious disease caused by the varicella-zoster virus (VZV). It can cause an itchy, blister-like rash. The rash first appears on the chest, back, and face, and then spreads over the entire body, causing between 250 and 500 itchy blisters.",
+  "precautions": [
+   "use neem in bathing",
+   "consume neem leaves",
+   "take vaccine",
+   "avoid public places"
+  ]
+ },
+ "chlamydia": {
+  "description": null,
+  "precautions": []
+ },
+ "cholecystitis": {
+  "description": null,
+  "precautions": []
+ },
+ "choledocholithiasis": {
+  "description": null,
+  "precautions": []
+ },
+ "cholesteatoma": {
+  "description": null,
+  "precautions": []
+ },
+ "chondromalacia of the patella": {
+  "description": null,
+  "precautions": []
+ },
+ "chorioretinitis": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic back pain": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic cholestasis": {
+  "description": "Chronic cholestatic diseases, whether occurring in infancy, childhood or adulthood, are characterized by defective bile acid transport from the liver to the intestine, which is caused by primary damage to the biliary epithelium in most cases",
+  "precautions": [
+   "cold baths",
+   "anti itch medicine",
+   "consult doctor",
+   "eat healthy"
+  ]
+ },
+ "chronic constipation": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic glaucoma": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic inflammatory demyelinating polyneuropathy (cidp)": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic kidney disease": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic knee pain": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic obstructive pulmonary disease (copd)": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic otitis media": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic pain disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic pancreatitis": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic rheumatic fever": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic sinusitis": {
+  "description": null,
+  "precautions": []
+ },
+ "chronic ulcer": {
+  "description": null,
+  "precautions": []
+ },
+ "cirrhosis": {
+  "description": null,
+  "precautions": []
+ },
+ "coagulation (bleeding) disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "cold sore": {
+  "description": null,
+  "precautions": []
+ },
+ "colonic polyp": {
+  "description": null,
+  "precautions": []
+ },
+ "colorectal cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "common cold": {
+  "description": "The common cold is a viral infection of your nose and throat (upper respiratory tract). It's usually harmless, although it might not feel that way. Many types of viruses can cause a common cold.",
+  "precautions": [
+   "drink vitamin c rich drinks",
+   "take vapour",
+   "avoid cold food",
+   "keep fever in check"
+  ]
+ },
+ "complex regional pain syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "concussion": {
+  "description": null,
+  "precautions": []
+ },
+ "conduct disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "conductive hearing loss": {
+  "description": null,
+  "precautions": []
+ },
+ "congenital heart defect": {
+  "description": null,
+  "precautions": []
+ },
+ "congenital malformation syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "conjunctivitis": {
+  "description": null,
+  "precautions": []
+ },
+ "conjunctivitis due to allergy": {
+  "description": null,
+  "precautions": []
+ },
+ "conjunctivitis due to bacteria": {
+  "description": null,
+  "precautions": []
+ },
+ "conjunctivitis due to virus": {
+  "description": null,
+  "precautions": []
+ },
+ "connective tissue disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "contact dermatitis": {
+  "description": null,
+  "precautions": []
+ },
+ "conversion disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "cornea infection": {
+  "description": null,
+  "precautions": []
+ },
+ "corneal abrasion": {
+  "description": null,
+  "precautions": []
+ },
+ "corneal disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "coronary atherosclerosis": {
+  "description": null,
+  "precautions": []
+ },
+ "covid-19": {
+  "description": "COVID-19 (Corona Virus) affects different people in different ways. It affects the lungs. Most infected people will develop mild to moderate illness and recover without hospitalization.",
+  "precautions": [
+   "cover mouth",
+   "social distancing",
+   "wear mask",
+   "medication"
+  ]
+ },
+ "cranial nerve palsy": {
+  "description": null,
+  "precautions": []
+ },
+ "crohn disease": {
+  "description": null,
+  "precautions": []
+ },
+ "croup": {
+  "description": null,
+  "precautions": []
+ },
+ "crushing injury": {
+  "description": null,
+  "precautions": []
+ },
+ "cryptococcosis": {
+  "description": null,
+  "precautions": []
+ },
+ "cryptorchidism": {
+  "description": null,
+  "precautions": []
+ },
+ "cushing syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "cyst of the eyelid": {
+  "description": null,
+  "precautions": []
+ },
+ "cystic fibrosis": {
+  "description": null,
+  "precautions": []
+ },
+ "cysticercosis": {
+  "description": null,
+  "precautions": []
+ },
+ "cystitis": {
+  "description": null,
+  "precautions": []
+ },
+ "de quervain disease": {
+  "description": null,
+  "precautions": []
+ },
+ "decubitus ulcer": {
+  "description": null,
+  "precautions": []
+ },
+ "deep vein thrombosis (dvt)": {
+  "description": null,
+  "precautions": []
+ },
+ "degenerative disc disease": {
+  "description": null,
+  "precautions": []
+ },
+ "delirium": {
+  "description": null,
+  "precautions": []
+ },
+ "dementia": {
+  "description": null,
+  "precautions": []
+ },
+ "dengue fever": {
+  "description": "an acute infectious disease caused by a flavivirus (species Dengue virus of the genus Flavivirus), transmitted by aedes mosquitoes, and characterized by headache, severe joint pain, and a rash. \u2014 called also breakbone fever, dengue fever.",
+  "precautions": [
+   "drink papaya leaf juice",
+   "avoid fatty spicy food",
+   "keep mosquitos away",
+   "keep hydrated"
+  ]
+ },
+ "dental caries": {
+  "description": null,
+  "precautions": []
+ },
+ "depression": {
+  "description": null,
+  "precautions": []
+ },
+ "dermatitis due to sun exposure": {
+  "description": null,
+  "precautions": []
+ },
+ "developmental disability": {
+  "description": null,
+  "precautions": []
+ },
+ "deviated nasal septum": {
+  "description": null,
+  "precautions": []
+ },
+ "diabetes": {
+  "description": "Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy.",
+  "precautions": [
+   "have balanced diet",
+   "exercise",
+   "consult doctor",
+   "follow up"
+  ]
+ },
+ "diabetes insipidus": {
+  "description": null,
+  "precautions": []
+ },
+ "diabetic ketoacidosis": {
+  "description": null,
+  "precautions": []
+ },
+ "diabetic kidney disease": {
+  "description": null,
+  "precautions": []
+ },
+ "diabetic peripheral neuropathy": {
+  "description": null,
+  "precautions": []
+ },
+ "diabetic retinopathy": {
+  "description": null,
+  "precautions": []
+ },
+ "diaper rash": {
+  "description": null,
+  "precautions": []
+ },
+ "dislocation of the ankle": {
+  "description": null,
+  "precautions": []
+ },
+ "dislocation of the elbow": {
+  "description": null,
+  "precautions": []
+ },
+ "dislocation of the finger": {
+  "description": null,
+  "precautions": []
+ },
+ "dislocation of the foot": {
+  "description": null,
+  "precautions": []
+ },
+ "dislocation of the hip": {
+  "description": null,
+  "precautions": []
+ },
+ "dislocation of the knee": {
+  "description": null,
+  "precautions": []
+ },
+ "dislocation of the patella": {
+  "description": null,
+  "precautions": []
+ },
+ "dislocation of the shoulder": {
+  "description": null,
+  "precautions": []
+ },
+ "dislocation of the vertebra": {
+  "description": null,
+  "precautions": []
+ },
+ "dislocation of the wrist": {
+  "description": null,
+  "precautions": []
+ },
+ "dissociative disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "diverticulitis": {
+  "description": null,
+  "precautions": []
+ },
+ "diverticulosis": {
+  "description": null,
+  "precautions": []
+ },
+ "down syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "drug abuse": {
+  "description": null,
+  "precautions": []
+ },
+ "drug abuse (barbiturates)": {
+  "description": null,
+  "precautions": []
+ },
+ "drug abuse (cocaine)": {
+  "description": null,
+  "precautions": []
+ },
+ "drug abuse (methamphetamine)": {
+  "description": null,
+  "precautions": []
+ },
+ "drug abuse (opioids)": {
+  "description": null,
+  "precautions": []
+ },
+ "drug poisoning due to medication": {
+  "description": null,
+  "precautions": []
+ },
+ "drug reaction": {
+  "description": "An adverse drug reaction (ADR) is an injury caused by taking medication. ADRs may occur following a single dose or prolonged administration of a drug or result from the combination of two or more drugs.",
+  "precautions": [
+   "stop irritation",
+   "consult nearest hospital",
+   "stop taking drug",
+   "follow up"
+  ]
+ },
+ "drug withdrawal": {
+  "description": null,
+  "precautions": []
+ },
+ "dry eye of unknown cause": {
+  "description": null,
+  "precautions": []
+ },
+ "dumping syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "dyshidrosis": {
+  "description": null,
+  "precautions": []
+ },
+ "dysthymic disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "ear drum damage": {
+  "description": null,
+  "precautions": []
+ },
+ "ear wax impaction": {
+  "description": null,
+  "precautions": []
+ },
+ "eating disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "ectopic pregnancy": {
+  "description": null,
+  "precautions": []
+ },
+ "ectropion": {
+  "description": null,
+  "precautions": []
+ },
+ "eczema": {
+  "description": null,
+  "precautions": []
+ },
+ "edward syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "emphysema": {
+  "description": null,
+  "precautions": []
+ },
+ "empyema": {
+  "description": null,
+  "precautions": []
+ },
+ "encephalitis": {
+  "description": null,
+  "precautions": []
+ },
+ "endocarditis": {
+  "description": null,
+  "precautions": []
+ },
+ "endometrial cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "endometrial hyperplasia": {
+  "description": null,
+  "precautions": []
+ },
+ "endometriosis": {
+  "description": null,
+  "precautions": []
+ },
+ "endophthalmitis": {
+  "description": null,
+  "precautions": []
+ },
+ "envenomation from spider or animal bite": {
+  "description": null,
+  "precautions": []
+ },
+ "ependymoma": {
+  "description": null,
+  "precautions": []
+ },
+ "epididymitis": {
+  "description": null,
+  "precautions": []
+ },
+ "epidural hemorrhage": {
+  "description": null,
+  "precautions": []
+ },
+ "epilepsy": {
+  "description": null,
+  "precautions": []
+ },
+ "erectile dysfunction": {
+  "description": null,
+  "precautions": []
+ },
+ "erythema multiforme": {
+  "description": null,
+  "precautions": []
+ },
+ "esophageal cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "esophageal varices": {
+  "description": null,
+  "precautions": []
+ },
+ "esophagitis": {
+  "description": null,
+  "precautions": []
+ },
+ "essential tremor": {
+  "description": null,
+  "precautions": []
+ },
+ "eustachian tube dysfunction (ear disorder)": {
+  "description": null,
+  "precautions": []
+ },
+ "extrapyramidal effect of drugs": {
+  "description": null,
+  "precautions": []
+ },
+ "eye alignment disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "factitious disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "female genitalia infection": {
+  "description": null,
+  "precautions": []
+ },
+ "female infertility of unknown cause": {
+  "description": null,
+  "precautions": []
+ },
+ "fetal alcohol syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "fibroadenoma": {
+  "description": null,
+  "precautions": []
+ },
+ "fibrocystic breast disease": {
+  "description": null,
+  "precautions": []
+ },
+ "fibromyalgia": {
+  "description": null,
+  "precautions": []
+ },
+ "flat feet": {
+  "description": null,
+  "precautions": []
+ },
+ "floaters": {
+  "description": null,
+  "precautions": []
+ },
+ "flu": {
+  "description": null,
+  "precautions": []
+ },
+ "fluid overload": {
+  "description": null,
+  "precautions": []
+ },
+ "folate deficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "food allergy": {
+  "description": null,
+  "precautions": []
+ },
+ "foreign body in the ear": {
+  "description": null,
+  "precautions": []
+ },
+ "foreign body in the eye": {
+  "description": null,
+  "precautions": []
+ },
+ "foreign body in the gastrointestinal tract": {
+  "description": null,
+  "precautions": []
+ },
+ "foreign body in the nose": {
+  "description": null,
+  "precautions": []
+ },
+ "foreign body in the throat": {
+  "description": null,
+  "precautions": []
+ },
+ "foreign body in the vagina": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the ankle": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the arm": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the facial bones": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the finger": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the foot": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the hand": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the jaw": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the leg": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the neck": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the patella": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the pelvis": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the rib": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the shoulder": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the skull": {
+  "description": null,
+  "precautions": []
+ },
+ "fracture of the vertebra": {
+  "description": null,
+  "precautions": []
+ },
+ "friedrich ataxia": {
+  "description": null,
+  "precautions": []
+ },
+ "frostbite": {
+  "description": null,
+  "precautions": []
+ },
+ "fungal infection of the hair": {
+  "description": null,
+  "precautions": []
+ },
+ "fungal infection of the skin": {
+  "description": "In humans, fungal infections occur when an invading fungus takes over an area of the body and is too much for the immune system to handle. Fungi can live in the air, soil, water, and plants. There are also some fungi that live naturally in the human body. Like many microbes, there are helpful fungi and harmful fungi.",
+  "precautions": [
+   "bath twice",
+   "use detol or neem in bathing water",
+   "keep infected area dry",
+   "use clean cloths"
+  ]
+ },
+ "g6pd enzyme deficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "galactorrhea of unknown cause": {
+  "description": null,
+  "precautions": []
+ },
+ "gallstone": {
+  "description": null,
+  "precautions": []
+ },
+ "ganglion cyst": {
+  "description": null,
+  "precautions": []
+ },
+ "gas gangrene": {
+  "description": null,
+  "precautions": []
+ },
+ "gastritis": {
+  "description": null,
+  "precautions": []
+ },
+ "gastroduodenal ulcer": {
+  "description": "Peptic ulcer disease (PUD) is a break in the inner lining of the stomach, the first part of the small intestine, or sometimes the lower esophagus. An ulcer in the stomach is called a gastric ulcer, while one in the first part of the intestines is a duodenal ulcer.",
+  "precautions": [
+   "avoid fatty spicy food",
+   "consume probiotic food",
+   "eliminate milk",
+   "limit alcohol"
+  ]
+ },
+ "gastroesophageal reflux disease (gerd)": {
+  "description": "Gastroesophageal reflux disease, or GERD, is a digestive disorder that affects the lower esophageal sphincter (LES), the ring of muscle between the esophagus and stomach. Many people, including pregnant women, suffer from heartburn or acid indigestion caused by GERD.",
+  "precautions": [
+   "avoid fatty spicy food",
+   "avoid lying down after eating",
+   "maintain healthy weight",
+   "exercise"
+  ]
+ },
+ "gastrointestinal hemorrhage": {
+  "description": null,
+  "precautions": []
+ },
+ "gastroparesis": {
+  "description": null,
+  "precautions": []
+ },
+ "genital herpes": {
+  "description": null,
+  "precautions": []
+ },
+ "gestational diabetes": {
+  "description": null,
+  "precautions": []
+ },
+ "glaucoma": {
+  "description": null,
+  "precautions": []
+ },
+ "glucocorticoid deficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "goiter": {
+  "description": null,
+  "precautions": []
+ },
+ "gonorrhea": {
+  "description": null,
+  "precautions": []
+ },
+ "gout": {
+  "description": null,
+  "precautions": []
+ },
+ "granuloma inguinale": {
+  "description": null,
+  "precautions": []
+ },
+ "graves disease": {
+  "description": null,
+  "precautions": []
+ },
+ "guillain barre syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "gum disease": {
+  "description": null,
+  "precautions": []
+ },
+ "gynecomastia": {
+  "description": null,
+  "precautions": []
+ },
+ "hammer toe": {
+  "description": null,
+  "precautions": []
+ },
+ "hashimoto thyroiditis": {
+  "description": null,
+  "precautions": []
+ },
+ "head and neck cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "head injury": {
+  "description": null,
+  "precautions": []
+ },
+ "headache after lumbar puncture": {
+  "description": null,
+  "precautions": []
+ },
+ "heart attack": {
+  "description": "The death of heart muscle due to the loss of blood supply. The loss of blood supply is usually caused by a complete blockage of a coronary artery, one of the arteries that supplies blood to the heart muscle.",
+  "precautions": [
+   "call ambulance",
+   "chew or swallow asprin",
+   "keep calm"
+  ]
+ },
+ "heart block": {
+  "description": null,
+  "precautions": []
+ },
+ "heart contusion": {
+  "description": null,
+  "precautions": []
+ },
+ "heart failure": {
+  "description": null,
+  "precautions": []
+ },
+ "heat exhaustion": {
+  "description": null,
+  "precautions": []
+ },
+ "heat stroke": {
+  "description": null,
+  "precautions": []
+ },
+ "hemangioma": {
+  "description": null,
+  "precautions": []
+ },
+ "hemarthrosis": {
+  "description": null,
+  "precautions": []
+ },
+ "hematoma": {
+  "description": null,
+  "precautions": []
+ },
+ "hemiplegia": {
+  "description": null,
+  "precautions": []
+ },
+ "hemochromatosis": {
+  "description": null,
+  "precautions": []
+ },
+ "hemolytic anemia": {
+  "description": null,
+  "precautions": []
+ },
+ "hemophilia": {
+  "description": null,
+  "precautions": []
+ },
+ "hemorrhoids": {
+  "description": "Hemorrhoids, also spelled haemorrhoids, are vascular structures in the anal canal. In their ... Other names, Haemorrhoids, piles, hemorrhoidal disease .",
+  "precautions": [
+   "avoid fatty spicy food",
+   "consume witch hazel",
+   "warm bath with epsom salt",
+   "consume alovera juice"
+  ]
+ },
+ "hepatic encephalopathy": {
+  "description": null,
+  "precautions": []
+ },
+ "hepatitis due to a toxin": {
+  "description": null,
+  "precautions": []
+ },
+ "herniated disk": {
+  "description": null,
+  "precautions": []
+ },
+ "herpangina": {
+  "description": null,
+  "precautions": []
+ },
+ "hiatal hernia": {
+  "description": null,
+  "precautions": []
+ },
+ "hidradenitis suppurativa": {
+  "description": null,
+  "precautions": []
+ },
+ "high blood pressure": {
+  "description": "Hypertension (HTN or HT), also known as high blood pressure (HBP), is a long-term medical condition in which the blood pressure in the arteries is persistently elevated. High blood pressure typically does not cause symptoms.",
+  "precautions": [
+   "meditation",
+   "salt baths",
+   "reduce stress",
+   "get proper sleep"
+  ]
+ },
+ "hirschsprung disease": {
+  "description": null,
+  "precautions": []
+ },
+ "hirsutism": {
+  "description": null,
+  "precautions": []
+ },
+ "histoplasmosis": {
+  "description": null,
+  "precautions": []
+ },
+ "hormone disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "hpv": {
+  "description": null,
+  "precautions": []
+ },
+ "human immunodeficiency virus infection (hiv)": {
+  "description": "Acquired immunodeficiency syndrome (AIDS) is a chronic, potentially life-threatening condition caused by the human immunodeficiency virus (HIV). By damaging your immune system, HIV interferes with your body's ability to fight infection and disease.",
+  "precautions": [
+   "avoid open cuts",
+   "wear ppe if possible",
+   "consult doctor",
+   "follow up"
+  ]
+ },
+ "huntington disease": {
+  "description": null,
+  "precautions": []
+ },
+ "hydatidiform mole": {
+  "description": null,
+  "precautions": []
+ },
+ "hydrocele of the testicle": {
+  "description": null,
+  "precautions": []
+ },
+ "hydrocephalus": {
+  "description": null,
+  "precautions": []
+ },
+ "hydronephrosis": {
+  "description": null,
+  "precautions": []
+ },
+ "hypercalcemia": {
+  "description": null,
+  "precautions": []
+ },
+ "hypercholesterolemia": {
+  "description": null,
+  "precautions": []
+ },
+ "hyperemesis gravidarum": {
+  "description": null,
+  "precautions": []
+ },
+ "hypergammaglobulinemia": {
+  "description": null,
+  "precautions": []
+ },
+ "hyperhidrosis": {
+  "description": null,
+  "precautions": []
+ },
+ "hyperkalemia": {
+  "description": null,
+  "precautions": []
+ },
+ "hyperlipidemia": {
+  "description": null,
+  "precautions": []
+ },
+ "hypernatremia": {
+  "description": null,
+  "precautions": []
+ },
+ "hyperopia": {
+  "description": null,
+  "precautions": []
+ },
+ "hyperosmotic hyperketotic state": {
+  "description": null,
+  "precautions": []
+ },
+ "hypertension of pregnancy": {
+  "description": null,
+  "precautions": []
+ },
+ "hypertensive heart disease": {
+  "description": null,
+  "precautions": []
+ },
+ "hyperthyroidism": {
+  "description": "Hyperthyroidism (overactive thyroid) occurs when your thyroid gland produces too much of the hormone thyroxine. Hyperthyroidism can accelerate your body's metabolism, causing unintentional weight loss and a rapid or irregular heartbeat.",
+  "precautions": [
+   "eat healthy",
+   "massage",
+   "use lemon balm",
+   "take radioactive iodine treatment"
+  ]
+ },
+ "hypertrophic obstructive cardiomyopathy (hocm)": {
+  "description": null,
+  "precautions": []
+ },
+ "hypocalcemia": {
+  "description": null,
+  "precautions": []
+ },
+ "hypoglycemia": {
+  "description": "Hypoglycemia is a condition in which your blood sugar (glucose) level is lower than normal. Glucose is your body's main energy source. Hypoglycemia is often related to diabetes treatment. But other drugs and a variety of conditions \u2014 many rare \u2014 can cause low blood sugar in people who don't have diabetes.",
+  "precautions": [
+   "lie down on side",
+   "check in pulse",
+   "drink sugary drinks",
+   "consult doctor"
+  ]
+ },
+ "hypokalemia": {
+  "description": null,
+  "precautions": []
+ },
+ "hyponatremia": {
+  "description": null,
+  "precautions": []
+ },
+ "hypothermia": {
+  "description": null,
+  "precautions": []
+ },
+ "hypothyroidism": {
+  "description": "Hypothyroidism, also called underactive thyroid or low thyroid, is a disorder of the endocrine system in which the thyroid gland does not produce enough thyroid hormone.",
+  "precautions": [
+   "reduce stress",
+   "exercise",
+   "eat healthy",
+   "get proper sleep"
+  ]
+ },
+ "hypovolemia": {
+  "description": null,
+  "precautions": []
+ },
+ "idiopathic absence of menstruation": {
+  "description": null,
+  "precautions": []
+ },
+ "idiopathic excessive menstruation": {
+  "description": null,
+  "precautions": []
+ },
+ "idiopathic infrequent menstruation": {
+  "description": null,
+  "precautions": []
+ },
+ "idiopathic irregular menstrual cycle": {
+  "description": null,
+  "precautions": []
+ },
+ "idiopathic nonmenstrual bleeding": {
+  "description": null,
+  "precautions": []
+ },
+ "idiopathic painful menstruation": {
+  "description": null,
+  "precautions": []
+ },
+ "ileus": {
+  "description": null,
+  "precautions": []
+ },
+ "impetigo": {
+  "description": "Impetigo (im-puh-TIE-go) is a common and highly contagious skin infection that mainly affects infants and children. Impetigo usually appears as red sores on the face, especially around a child's nose and mouth, and on hands and feet. The sores burst and develop honey-colored crusts.",
+  "precautions": [
+   "soak affected area in warm water",
+   "use antibiotics",
+   "remove scabs with wet compressed cloth",
+   "consult doctor"
+  ]
+ },
+ "impulse control disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "indigestion": {
+  "description": null,
+  "precautions": []
+ },
+ "induced abortion": {
+  "description": null,
+  "precautions": []
+ },
+ "infection of open wound": {
+  "description": null,
+  "precautions": []
+ },
+ "infectious gastroenteritis": {
+  "description": "Gastroenteritis is an inflammation of the digestive tract, particularly the stomach, and large and small intestines. Viral and bacterial gastroenteritis are intestinal infections associated with symptoms of diarrhea , abdominal cramps, nausea , and vomiting .",
+  "precautions": [
+   "stop eating solid food for while",
+   "try taking small sips of water",
+   "rest",
+   "ease back into eating"
+  ]
+ },
+ "ingrown toe nail": {
+  "description": null,
+  "precautions": []
+ },
+ "inguinal hernia": {
+  "description": null,
+  "precautions": []
+ },
+ "injury of the ankle": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to internal organ": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the abdomen": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the arm": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the face": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the finger": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the hand": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the hip": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the knee": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the leg": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the shoulder": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the spinal cord": {
+  "description": null,
+  "precautions": []
+ },
+ "injury to the trunk": {
+  "description": null,
+  "precautions": []
+ },
+ "insect bite": {
+  "description": null,
+  "precautions": []
+ },
+ "insulin overdose": {
+  "description": null,
+  "precautions": []
+ },
+ "interstitial lung disease": {
+  "description": null,
+  "precautions": []
+ },
+ "intertrigo (skin condition)": {
+  "description": null,
+  "precautions": []
+ },
+ "intestinal cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "intestinal disease": {
+  "description": null,
+  "precautions": []
+ },
+ "intestinal malabsorption": {
+  "description": null,
+  "precautions": []
+ },
+ "intestinal obstruction": {
+  "description": null,
+  "precautions": []
+ },
+ "intracerebral hemorrhage": {
+  "description": "Intracerebral hemorrhage (ICH) is when blood suddenly bursts into brain tissue, causing damage to your brain. Symptoms usually appear suddenly during ICH. They include headache, weakness, confusion, and paralysis, particularly on one side of your body.",
+  "precautions": [
+   "massage",
+   "eat healthy",
+   "exercise",
+   "consult doctor"
+  ]
+ },
+ "intracranial abscess": {
+  "description": null,
+  "precautions": []
+ },
+ "intracranial hemorrhage": {
+  "description": null,
+  "precautions": []
+ },
+ "intussusception": {
+  "description": null,
+  "precautions": []
+ },
+ "iridocyclitis": {
+  "description": null,
+  "precautions": []
+ },
+ "iron deficiency anemia": {
+  "description": null,
+  "precautions": []
+ },
+ "irritable bowel syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "ischemia of the bowel": {
+  "description": null,
+  "precautions": []
+ },
+ "ischemic heart disease": {
+  "description": null,
+  "precautions": []
+ },
+ "itching of unknown cause": {
+  "description": null,
+  "precautions": []
+ },
+ "jaundice": {
+  "description": "Yellow staining of the skin and sclerae (the whites of the eyes) by abnormally high blood levels of the bile pigment bilirubin. The yellowing extends to other tissues and body fluids. Jaundice was once called the \"morbus regius\" (the regal disease) in the belief that only the touch of a king could cure it",
+  "precautions": [
+   "drink plenty of water",
+   "consume milk thistle",
+   "eat fruits and high fiberous food",
+   "medication"
+  ]
+ },
+ "jaw disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "joint effusion": {
+  "description": null,
+  "precautions": []
+ },
+ "juvenile rheumatoid arthritis": {
+  "description": null,
+  "precautions": []
+ },
+ "kaposi sarcoma": {
+  "description": null,
+  "precautions": []
+ },
+ "kidney cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "kidney disease due to longstanding hypertension": {
+  "description": null,
+  "precautions": []
+ },
+ "kidney failure": {
+  "description": null,
+  "precautions": []
+ },
+ "kidney stone": {
+  "description": null,
+  "precautions": []
+ },
+ "knee ligament or meniscus tear": {
+  "description": null,
+  "precautions": []
+ },
+ "labyrinthitis": {
+  "description": null,
+  "precautions": []
+ },
+ "lactose intolerance": {
+  "description": null,
+  "precautions": []
+ },
+ "laryngitis": {
+  "description": null,
+  "precautions": []
+ },
+ "lateral epicondylitis (tennis elbow)": {
+  "description": null,
+  "precautions": []
+ },
+ "leukemia": {
+  "description": null,
+  "precautions": []
+ },
+ "lewy body dementia": {
+  "description": null,
+  "precautions": []
+ },
+ "lice": {
+  "description": null,
+  "precautions": []
+ },
+ "lichen planus": {
+  "description": null,
+  "precautions": []
+ },
+ "lichen simplex": {
+  "description": null,
+  "precautions": []
+ },
+ "lipoma": {
+  "description": null,
+  "precautions": []
+ },
+ "liver cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "liver disease": {
+  "description": null,
+  "precautions": []
+ },
+ "lumbago": {
+  "description": null,
+  "precautions": []
+ },
+ "lung cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "lung contusion": {
+  "description": null,
+  "precautions": []
+ },
+ "lyme disease": {
+  "description": null,
+  "precautions": []
+ },
+ "lymphadenitis": {
+  "description": null,
+  "precautions": []
+ },
+ "lymphangitis": {
+  "description": null,
+  "precautions": []
+ },
+ "lymphedema": {
+  "description": null,
+  "precautions": []
+ },
+ "lymphogranuloma venereum": {
+  "description": null,
+  "precautions": []
+ },
+ "lymphoma": {
+  "description": null,
+  "precautions": []
+ },
+ "macular degeneration": {
+  "description": null,
+  "precautions": []
+ },
+ "magnesium deficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "malaria": {
+  "description": "An infectious disease caused by protozoan parasites from the Plasmodium family that can be transmitted by the bite of the Anopheles mosquito or by a contaminated needle or transfusion. Falciparum malaria is the most deadly type.",
+  "precautions": [
+   "Consult nearest hospital",
+   "avoid oily food",
+   "avoid non veg food",
+   "keep mosquitos out"
+  ]
+ },
+ "male genitalia infection": {
+  "description": null,
+  "precautions": []
+ },
+ "malignant hypertension": {
+  "description": null,
+  "precautions": []
+ },
+ "marijuana abuse": {
+  "description": null,
+  "precautions": []
+ },
+ "mastectomy": {
+  "description": null,
+  "precautions": []
+ },
+ "mastoiditis": {
+  "description": null,
+  "precautions": []
+ },
+ "meckel diverticulum": {
+  "description": null,
+  "precautions": []
+ },
+ "melanoma": {
+  "description": null,
+  "precautions": []
+ },
+ "meniere disease": {
+  "description": null,
+  "precautions": []
+ },
+ "meningioma": {
+  "description": null,
+  "precautions": []
+ },
+ "meningitis": {
+  "description": null,
+  "precautions": []
+ },
+ "menopause": {
+  "description": null,
+  "precautions": []
+ },
+ "metabolic disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "metastatic cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "migraine": {
+  "description": "A migraine can cause severe throbbing pain or a pulsing sensation, usually on one side of the head. It's often accompanied by nausea, vomiting, and extreme sensitivity to light and sound. Migraine attacks can last for hours to days, and the pain can be so severe that it interferes with your daily activities.",
+  "precautions": [
+   "meditation",
+   "reduce stress",
+   "use poloroid glasses in sun",
+   "consult doctor"
+  ]
+ },
+ "missed abortion": {
+  "description": null,
+  "precautions": []
+ },
+ "mitral valve disease": {
+  "description": null,
+  "precautions": []
+ },
+ "mittelschmerz": {
+  "description": null,
+  "precautions": []
+ },
+ "molluscum contagiosum": {
+  "description": null,
+  "precautions": []
+ },
+ "mononeuritis": {
+  "description": null,
+  "precautions": []
+ },
+ "mononucleosis": {
+  "description": null,
+  "precautions": []
+ },
+ "moyamoya disease": {
+  "description": null,
+  "precautions": []
+ },
+ "mucositis": {
+  "description": null,
+  "precautions": []
+ },
+ "multiple myeloma": {
+  "description": null,
+  "precautions": []
+ },
+ "multiple sclerosis": {
+  "description": null,
+  "precautions": []
+ },
+ "mumps": {
+  "description": null,
+  "precautions": []
+ },
+ "muscle spasm": {
+  "description": null,
+  "precautions": []
+ },
+ "muscular dystrophy": {
+  "description": null,
+  "precautions": []
+ },
+ "myasthenia gravis": {
+  "description": null,
+  "precautions": []
+ },
+ "myelodysplastic syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "myocarditis": {
+  "description": null,
+  "precautions": []
+ },
+ "myoclonus": {
+  "description": null,
+  "precautions": []
+ },
+ "myopia": {
+  "description": null,
+  "precautions": []
+ },
+ "myositis": {
+  "description": null,
+  "precautions": []
+ },
+ "narcolepsy": {
+  "description": null,
+  "precautions": []
+ },
+ "nasal polyp": {
+  "description": null,
+  "precautions": []
+ },
+ "necrotizing fasciitis": {
+  "description": null,
+  "precautions": []
+ },
+ "neonatal jaundice": {
+  "description": null,
+  "precautions": []
+ },
+ "nerve impingement near the shoulder": {
+  "description": null,
+  "precautions": []
+ },
+ "neuralgia": {
+  "description": null,
+  "precautions": []
+ },
+ "neurofibromatosis": {
+  "description": null,
+  "precautions": []
+ },
+ "neuropathy due to drugs": {
+  "description": null,
+  "precautions": []
+ },
+ "neurosis": {
+  "description": null,
+  "precautions": []
+ },
+ "nonalcoholic liver disease (nash)": {
+  "description": null,
+  "precautions": []
+ },
+ "noninfectious gastroenteritis": {
+  "description": null,
+  "precautions": []
+ },
+ "normal pressure hydrocephalus": {
+  "description": null,
+  "precautions": []
+ },
+ "nose disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "obesity": {
+  "description": null,
+  "precautions": []
+ },
+ "obsessive compulsive disorder (ocd)": {
+  "description": null,
+  "precautions": []
+ },
+ "obstructive sleep apnea (osa)": {
+  "description": null,
+  "precautions": []
+ },
+ "omphalitis": {
+  "description": null,
+  "precautions": []
+ },
+ "onychomycosis": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound due to trauma": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound from surgical incision": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the abdomen": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the arm": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the back": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the cheek": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the chest": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the ear": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the eye": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the face": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the finger": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the foot": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the hand": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the head": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the jaw": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the knee": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the lip": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the mouth": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the neck": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the nose": {
+  "description": null,
+  "precautions": []
+ },
+ "open wound of the shoulder": {
+  "description": null,
+  "precautions": []
+ },
+ "oppositional disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "optic neuritis": {
+  "description": null,
+  "precautions": []
+ },
+ "oral leukoplakia": {
+  "description": null,
+  "precautions": []
+ },
+ "oral mucosal lesion": {
+  "description": null,
+  "precautions": []
+ },
+ "oral thrush (yeast infection)": {
+  "description": null,
+  "precautions": []
+ },
+ "orbital cellulitis": {
+  "description": null,
+  "precautions": []
+ },
+ "orthostatic hypotension": {
+  "description": null,
+  "precautions": []
+ },
+ "osteoarthritis": {
+  "description": "Osteoarthritis is the most common form of arthritis, affecting millions of people worldwide. It occurs when the protective cartilage that cushions the ends of your bones wears down over time.",
+  "precautions": [
+   "acetaminophen",
+   "consult nearest hospital",
+   "follow up",
+   "salt baths"
+  ]
+ },
+ "osteochondroma": {
+  "description": null,
+  "precautions": []
+ },
+ "osteochondrosis": {
+  "description": null,
+  "precautions": []
+ },
+ "osteomyelitis": {
+  "description": null,
+  "precautions": []
+ },
+ "osteoporosis": {
+  "description": null,
+  "precautions": []
+ },
+ "otitis externa (swimmer's ear)": {
+  "description": null,
+  "precautions": []
+ },
+ "otitis media": {
+  "description": null,
+  "precautions": []
+ },
+ "otosclerosis": {
+  "description": null,
+  "precautions": []
+ },
+ "ovarian cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "ovarian cyst": {
+  "description": null,
+  "precautions": []
+ },
+ "ovarian torsion": {
+  "description": null,
+  "precautions": []
+ },
+ "overflow incontinence": {
+  "description": null,
+  "precautions": []
+ },
+ "pain after an operation": {
+  "description": null,
+  "precautions": []
+ },
+ "pain disorder affecting the neck": {
+  "description": null,
+  "precautions": []
+ },
+ "pancreatic cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "panic attack": {
+  "description": null,
+  "precautions": []
+ },
+ "panic disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "parasitic disease": {
+  "description": null,
+  "precautions": []
+ },
+ "parathyroid adenoma": {
+  "description": null,
+  "precautions": []
+ },
+ "parkinson disease": {
+  "description": null,
+  "precautions": []
+ },
+ "paronychia": {
+  "description": null,
+  "precautions": []
+ },
+ "paroxysmal supraventricular tachycardia": {
+  "description": null,
+  "precautions": []
+ },
+ "paroxysmal ventricular tachycardia": {
+  "description": null,
+  "precautions": []
+ },
+ "pelvic fistula": {
+  "description": null,
+  "precautions": []
+ },
+ "pelvic inflammatory disease": {
+  "description": null,
+  "precautions": []
+ },
+ "pelvic organ prolapse": {
+  "description": null,
+  "precautions": []
+ },
+ "pemphigus": {
+  "description": null,
+  "precautions": []
+ },
+ "pericarditis": {
+  "description": null,
+  "precautions": []
+ },
+ "peripheral arterial disease": {
+  "description": null,
+  "precautions": []
+ },
+ "peripheral arterial embolism": {
+  "description": null,
+  "precautions": []
+ },
+ "peripheral nerve disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "perirectal infection": {
+  "description": null,
+  "precautions": []
+ },
+ "peritonitis": {
+  "description": null,
+  "precautions": []
+ },
+ "peritonsillar abscess": {
+  "description": null,
+  "precautions": []
+ },
+ "persistent vomiting of unknown cause": {
+  "description": null,
+  "precautions": []
+ },
+ "personality disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "peyronie disease": {
+  "description": null,
+  "precautions": []
+ },
+ "pharyngitis": {
+  "description": null,
+  "precautions": []
+ },
+ "phimosis": {
+  "description": null,
+  "precautions": []
+ },
+ "pilonidal cyst": {
+  "description": null,
+  "precautions": []
+ },
+ "pinguecula": {
+  "description": null,
+  "precautions": []
+ },
+ "pinworm infection": {
+  "description": null,
+  "precautions": []
+ },
+ "pituitary adenoma": {
+  "description": null,
+  "precautions": []
+ },
+ "pituitary disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "pityriasis rosea": {
+  "description": null,
+  "precautions": []
+ },
+ "placenta previa": {
+  "description": null,
+  "precautions": []
+ },
+ "placental abruption": {
+  "description": null,
+  "precautions": []
+ },
+ "plantar fasciitis": {
+  "description": null,
+  "precautions": []
+ },
+ "pleural effusion": {
+  "description": null,
+  "precautions": []
+ },
+ "pneumoconiosis": {
+  "description": null,
+  "precautions": []
+ },
+ "pneumonia": {
+  "description": "Pneumonia is an infection in one or both lungs. Bacteria, viruses, and fungi cause it. The infection causes inflammation in the air sacs in your lungs, which are called alveoli. The alveoli fill with fluid or pus, making it difficult to breathe.",
+  "precautions": [
+   "consult doctor",
+   "medication",
+   "rest",
+   "follow up"
+  ]
+ },
+ "pneumothorax": {
+  "description": null,
+  "precautions": []
+ },
+ "poisoning due to analgesics": {
+  "description": null,
+  "precautions": []
+ },
+ "poisoning due to anticonvulsants": {
+  "description": null,
+  "precautions": []
+ },
+ "poisoning due to antidepressants": {
+  "description": null,
+  "precautions": []
+ },
+ "poisoning due to antihypertensives": {
+  "description": null,
+  "precautions": []
+ },
+ "poisoning due to antimicrobial drugs": {
+  "description": null,
+  "precautions": []
+ },
+ "poisoning due to antipsychotics": {
+  "description": null,
+  "precautions": []
+ },
+ "poisoning due to ethylene glycol": {
+  "description": null,
+  "precautions": []
+ },
+ "poisoning due to gas": {
+  "description": null,
+  "precautions": []
+ },
+ "poisoning due to opioids": {
+  "description": null,
+  "precautions": []
+ },
+ "poisoning due to sedatives": {
+  "description": null,
+  "precautions": []
+ },
+ "polycystic kidney disease": {
+  "description": null,
+  "precautions": []
+ },
+ "polycystic ovarian syndrome (pcos)": {
+  "description": null,
+  "precautions": []
+ },
+ "polycythemia vera": {
+  "description": null,
+  "precautions": []
+ },
+ "polymyalgia rheumatica": {
+  "description": null,
+  "precautions": []
+ },
+ "post-traumatic stress disorder (ptsd)": {
+  "description": null,
+  "precautions": []
+ },
+ "postoperative infection": {
+  "description": null,
+  "precautions": []
+ },
+ "postpartum depression": {
+  "description": null,
+  "precautions": []
+ },
+ "preeclampsia": {
+  "description": null,
+  "precautions": []
+ },
+ "pregnancy": {
+  "description": null,
+  "precautions": []
+ },
+ "premature atrial contractions (pacs)": {
+  "description": null,
+  "precautions": []
+ },
+ "premature ovarian failure": {
+  "description": null,
+  "precautions": []
+ },
+ "premature rupture of amniotic membrane": {
+  "description": null,
+  "precautions": []
+ },
+ "premature ventricular contractions (pvcs)": {
+  "description": null,
+  "precautions": []
+ },
+ "premenstrual tension syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "presbyacusis": {
+  "description": null,
+  "precautions": []
+ },
+ "presbyopia": {
+  "description": null,
+  "precautions": []
+ },
+ "priapism": {
+  "description": null,
+  "precautions": []
+ },
+ "primary immunodeficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "primary insomnia": {
+  "description": null,
+  "precautions": []
+ },
+ "primary kidney disease": {
+  "description": null,
+  "precautions": []
+ },
+ "primary thrombocythemia": {
+  "description": null,
+  "precautions": []
+ },
+ "problem during pregnancy": {
+  "description": null,
+  "precautions": []
+ },
+ "prostate cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "prostatitis": {
+  "description": null,
+  "precautions": []
+ },
+ "protein deficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "pseudohypoparathyroidism": {
+  "description": null,
+  "precautions": []
+ },
+ "pseudotumor cerebri": {
+  "description": null,
+  "precautions": []
+ },
+ "psoriasis": {
+  "description": "Psoriasis is a common skin disorder that forms thick, red, bumpy patches covered with silvery scales. They can pop up anywhere, but most appear on the scalp, elbows, knees, and lower back. Psoriasis can't be passed from person to person. It does sometimes happen in members of the same family.",
+  "precautions": [
+   "wash hands with warm soapy water",
+   "stop bleeding using pressure",
+   "consult doctor",
+   "salt baths"
+  ]
+ },
+ "psychosexual disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "psychotic disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "pterygium": {
+  "description": null,
+  "precautions": []
+ },
+ "pulmonary congestion": {
+  "description": null,
+  "precautions": []
+ },
+ "pulmonary embolism": {
+  "description": null,
+  "precautions": []
+ },
+ "pulmonary eosinophilia": {
+  "description": null,
+  "precautions": []
+ },
+ "pulmonary fibrosis": {
+  "description": null,
+  "precautions": []
+ },
+ "pulmonary hypertension": {
+  "description": null,
+  "precautions": []
+ },
+ "pulmonic valve disease": {
+  "description": null,
+  "precautions": []
+ },
+ "pyelonephritis": {
+  "description": null,
+  "precautions": []
+ },
+ "pyloric stenosis": {
+  "description": null,
+  "precautions": []
+ },
+ "pyogenic skin infection": {
+  "description": null,
+  "precautions": []
+ },
+ "raynaud disease": {
+  "description": null,
+  "precautions": []
+ },
+ "reactive arthritis": {
+  "description": null,
+  "precautions": []
+ },
+ "rectal disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "restless leg syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "retinal detachment": {
+  "description": null,
+  "precautions": []
+ },
+ "retinopathy due to high blood pressure": {
+  "description": null,
+  "precautions": []
+ },
+ "rhabdomyolysis": {
+  "description": null,
+  "precautions": []
+ },
+ "rheumatic fever": {
+  "description": null,
+  "precautions": []
+ },
+ "rheumatoid arthritis": {
+  "description": null,
+  "precautions": []
+ },
+ "rocky mountain spotted fever": {
+  "description": null,
+  "precautions": []
+ },
+ "rosacea": {
+  "description": null,
+  "precautions": []
+ },
+ "rotator cuff injury": {
+  "description": null,
+  "precautions": []
+ },
+ "salivary gland disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "sarcoidosis": {
+  "description": null,
+  "precautions": []
+ },
+ "scabies": {
+  "description": null,
+  "precautions": []
+ },
+ "scar": {
+  "description": null,
+  "precautions": []
+ },
+ "scarlet fever": {
+  "description": null,
+  "precautions": []
+ },
+ "schizophrenia": {
+  "description": null,
+  "precautions": []
+ },
+ "sciatica": {
+  "description": null,
+  "precautions": []
+ },
+ "scleritis": {
+  "description": null,
+  "precautions": []
+ },
+ "scleroderma": {
+  "description": null,
+  "precautions": []
+ },
+ "scoliosis": {
+  "description": null,
+  "precautions": []
+ },
+ "scurvy": {
+  "description": null,
+  "precautions": []
+ },
+ "seasonal allergies (hay fever)": {
+  "description": null,
+  "precautions": []
+ },
+ "sebaceous cyst": {
+  "description": null,
+  "precautions": []
+ },
+ "seborrheic dermatitis": {
+  "description": null,
+  "precautions": []
+ },
+ "seborrheic keratosis": {
+  "description": null,
+  "precautions": []
+ },
+ "sensorineural hearing loss": {
+  "description": null,
+  "precautions": []
+ },
+ "sepsis": {
+  "description": null,
+  "precautions": []
+ },
+ "septic arthritis": {
+  "description": null,
+  "precautions": []
+ },
+ "shingles (herpes zoster)": {
+  "description": null,
+  "precautions": []
+ },
+ "sialoadenitis": {
+  "description": null,
+  "precautions": []
+ },
+ "sick sinus syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "sickle cell anemia": {
+  "description": null,
+  "precautions": []
+ },
+ "sickle cell crisis": {
+  "description": null,
+  "precautions": []
+ },
+ "sinus bradycardia": {
+  "description": null,
+  "precautions": []
+ },
+ "sjogren syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "skin cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "skin disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "skin pigmentation disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "skin polyp": {
+  "description": null,
+  "precautions": []
+ },
+ "smoking or tobacco addiction": {
+  "description": null,
+  "precautions": []
+ },
+ "social phobia": {
+  "description": null,
+  "precautions": []
+ },
+ "soft tissue sarcoma": {
+  "description": null,
+  "precautions": []
+ },
+ "somatization disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "spermatocele": {
+  "description": null,
+  "precautions": []
+ },
+ "spherocytosis": {
+  "description": null,
+  "precautions": []
+ },
+ "spina bifida": {
+  "description": null,
+  "precautions": []
+ },
+ "spinal stenosis": {
+  "description": null,
+  "precautions": []
+ },
+ "spinocerebellar ataxia": {
+  "description": null,
+  "precautions": []
+ },
+ "spondylitis": {
+  "description": null,
+  "precautions": []
+ },
+ "spondylolisthesis": {
+  "description": null,
+  "precautions": []
+ },
+ "spondylosis": {
+  "description": "Cervical spondylosis is a general term for age-related wear and tear affecting the spinal disks in your neck. As the disks dehydrate and shrink, signs of osteoarthritis develop, including bony projections along the edges of bones (bone spurs).",
+  "precautions": [
+   "use heating pad or cold pack",
+   "exercise",
+   "take otc pain reliver",
+   "consult doctor"
+  ]
+ },
+ "spontaneous abortion": {
+  "description": null,
+  "precautions": []
+ },
+ "sporotrichosis": {
+  "description": null,
+  "precautions": []
+ },
+ "sprain or strain": {
+  "description": null,
+  "precautions": []
+ },
+ "stenosis of the tear duct": {
+  "description": null,
+  "precautions": []
+ },
+ "stomach cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "strep throat": {
+  "description": null,
+  "precautions": []
+ },
+ "stress incontinence": {
+  "description": null,
+  "precautions": []
+ },
+ "stricture of the esophagus": {
+  "description": null,
+  "precautions": []
+ },
+ "stroke": {
+  "description": null,
+  "precautions": []
+ },
+ "stye": {
+  "description": null,
+  "precautions": []
+ },
+ "subacute thyroiditis": {
+  "description": null,
+  "precautions": []
+ },
+ "subarachnoid hemorrhage": {
+  "description": null,
+  "precautions": []
+ },
+ "subconjunctival hemorrhage": {
+  "description": null,
+  "precautions": []
+ },
+ "subdural hemorrhage": {
+  "description": null,
+  "precautions": []
+ },
+ "substance-related mental disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "syndrome of inappropriate secretion of adh (siadh)": {
+  "description": null,
+  "precautions": []
+ },
+ "syphilis": {
+  "description": null,
+  "precautions": []
+ },
+ "syringomyelia": {
+  "description": null,
+  "precautions": []
+ },
+ "systemic lupus erythematosis (sle)": {
+  "description": null,
+  "precautions": []
+ },
+ "teething syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "temporary or benign blood in urine": {
+  "description": null,
+  "precautions": []
+ },
+ "temporomandibular joint disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "tendinitis": {
+  "description": null,
+  "precautions": []
+ },
+ "tension headache": {
+  "description": null,
+  "precautions": []
+ },
+ "testicular cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "testicular disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "testicular torsion": {
+  "description": null,
+  "precautions": []
+ },
+ "thalassemia": {
+  "description": null,
+  "precautions": []
+ },
+ "thoracic aortic aneurysm": {
+  "description": null,
+  "precautions": []
+ },
+ "thoracic outlet syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "threatened pregnancy": {
+  "description": null,
+  "precautions": []
+ },
+ "thrombocytopenia": {
+  "description": null,
+  "precautions": []
+ },
+ "thrombophlebitis": {
+  "description": null,
+  "precautions": []
+ },
+ "thyroid cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "thyroid disease": {
+  "description": null,
+  "precautions": []
+ },
+ "thyroid nodule": {
+  "description": null,
+  "precautions": []
+ },
+ "tic (movement) disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "tietze syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "tinnitus of unknown cause": {
+  "description": null,
+  "precautions": []
+ },
+ "tonsillar hypertrophy": {
+  "description": null,
+  "precautions": []
+ },
+ "tonsillitis": {
+  "description": null,
+  "precautions": []
+ },
+ "tooth abscess": {
+  "description": null,
+  "precautions": []
+ },
+ "tooth disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "torticollis": {
+  "description": null,
+  "precautions": []
+ },
+ "tourette syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "toxic multinodular goiter": {
+  "description": null,
+  "precautions": []
+ },
+ "toxoplasmosis": {
+  "description": null,
+  "precautions": []
+ },
+ "tracheitis": {
+  "description": null,
+  "precautions": []
+ },
+ "transient ischemic attack": {
+  "description": null,
+  "precautions": []
+ },
+ "trichiasis": {
+  "description": null,
+  "precautions": []
+ },
+ "trichinosis": {
+  "description": null,
+  "precautions": []
+ },
+ "trichomonas infection": {
+  "description": null,
+  "precautions": []
+ },
+ "tricuspid valve disease": {
+  "description": null,
+  "precautions": []
+ },
+ "trigeminal neuralgia": {
+  "description": null,
+  "precautions": []
+ },
+ "trigger finger (finger disorder)": {
+  "description": null,
+  "precautions": []
+ },
+ "tuberculosis": {
+  "description": "Tuberculosis (TB) is an infectious disease usually caused by Mycobacterium tuberculosis (MTB) bacteria. Tuberculosis generally affects the lungs, but can also affect other parts of the body. Most infections show no symptoms, in which case it is known as latent tuberculosis.",
+  "precautions": [
+   "cover mouth",
+   "consult doctor",
+   "medication",
+   "rest"
+  ]
+ },
+ "tuberous sclerosis": {
+  "description": null,
+  "precautions": []
+ },
+ "turner syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "typhoid fever": {
+  "description": "An acute illness characterized by fever caused by infection with the bacterium Salmonella typhi. Typhoid fever has an insidious onset, with fever, headache, constipation, malaise, chills, and muscle pain. Diarrhea is uncommon, and vomiting is not usually severe.",
+  "precautions": [
+   "eat high calorie vegitables",
+   "antiboitic therapy",
+   "consult doctor",
+   "medication"
+  ]
+ },
+ "ulcerative colitis": {
+  "description": null,
+  "precautions": []
+ },
+ "urethral disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "urethral stricture": {
+  "description": null,
+  "precautions": []
+ },
+ "urethral valves": {
+  "description": null,
+  "precautions": []
+ },
+ "urethritis": {
+  "description": null,
+  "precautions": []
+ },
+ "urge incontinence": {
+  "description": null,
+  "precautions": []
+ },
+ "urinary tract infection": {
+  "description": "Urinary tract infection: An infection of the kidney, ureter, bladder, or urethra. Abbreviated UTI. Not everyone with a UTI has symptoms, but common symptoms include a frequent urge to urinate and pain or burning when urinating.",
+  "precautions": [
+   "drink plenty of water",
+   "increase vitamin c intake",
+   "drink cranberry juice",
+   "take probiotics"
+  ]
+ },
+ "urinary tract obstruction": {
+  "description": null,
+  "precautions": []
+ },
+ "uterine atony": {
+  "description": null,
+  "precautions": []
+ },
+ "uterine cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "uterine fibroids": {
+  "description": null,
+  "precautions": []
+ },
+ "uveitis": {
+  "description": null,
+  "precautions": []
+ },
+ "vacterl syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "vaginal cyst": {
+  "description": null,
+  "precautions": []
+ },
+ "vaginal yeast infection": {
+  "description": null,
+  "precautions": []
+ },
+ "vaginismus": {
+  "description": null,
+  "precautions": []
+ },
+ "vaginitis": {
+  "description": null,
+  "precautions": []
+ },
+ "valley fever": {
+  "description": null,
+  "precautions": []
+ },
+ "varicocele of the testicles": {
+  "description": null,
+  "precautions": []
+ },
+ "varicose veins": {
+  "description": "A vein that has enlarged and twisted, often appearing as a bulging, blue blood vessel that is clearly visible through the skin. Varicose veins are most common in older adults, particularly women, and occur especially on the legs.",
+  "precautions": [
+   "lie down flat and raise the leg high",
+   "use oinments",
+   "use vein compression",
+   "dont stand still for long"
+  ]
+ },
+ "vasculitis": {
+  "description": null,
+  "precautions": []
+ },
+ "venous insufficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "vertebrobasilar insufficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "vesicoureteral reflux": {
+  "description": null,
+  "precautions": []
+ },
+ "viral exanthem": {
+  "description": null,
+  "precautions": []
+ },
+ "viral hepatitis": {
+  "description": "Hepatitis A is a highly contagious liver infection caused by the hepatitis A virus. The virus is one of several types of hepatitis viruses that cause inflammation and affect your liver's ability to function.",
+  "precautions": [
+   "Consult nearest hospital",
+   "wash hands through",
+   "avoid fatty spicy food",
+   "medication"
+  ]
+ },
+ "viral warts": {
+  "description": null,
+  "precautions": []
+ },
+ "vitamin a deficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "vitamin b12 deficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "vitamin d deficiency": {
+  "description": null,
+  "precautions": []
+ },
+ "vitreous degeneration": {
+  "description": null,
+  "precautions": []
+ },
+ "vitreous hemorrhage": {
+  "description": null,
+  "precautions": []
+ },
+ "vocal cord polyp": {
+  "description": null,
+  "precautions": []
+ },
+ "volvulus": {
+  "description": null,
+  "precautions": []
+ },
+ "von willebrand disease": {
+  "description": null,
+  "precautions": []
+ },
+ "vulvar cancer": {
+  "description": null,
+  "precautions": []
+ },
+ "vulvar disorder": {
+  "description": null,
+  "precautions": []
+ },
+ "vulvodynia": {
+  "description": null,
+  "precautions": []
+ },
+ "wernicke korsakoff syndrome": {
+  "description": null,
+  "precautions": []
+ },
+ "white blood cell disease": {
+  "description": null,
+  "precautions": []
+ },
+ "whooping cough": {
+  "description": null,
+  "precautions": []
+ },
+ "wilson disease": {
+  "description": null,
+  "precautions": []
+ },
+ "yeast infection": {
+  "description": null,
+  "precautions": []
+ },
+ "zenker diverticulum": {
+  "description": null,
+  "precautions": []
+ }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "YOUR_KAGGLE_USERNAME/disease-akinator-prep",
+  "title": "disease-akinator-prep",
+  "code_file": "prepare_data.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "dhivyeshrk/diseases-and-symptoms-dataset",
+    "itachi9604/disease-symptom-description-dataset"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

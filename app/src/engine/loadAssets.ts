@@ -1,0 +1,55 @@
+import type { EngineData, Meta } from "./types";
+
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+/** Fetches a file, reporting bytes received so far (total may be 0 if the server doesn't say). */
+async function fetchBytes(url: string, onProgress?: (loaded: number, total: number) => void): Promise<Uint8Array> {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Couldn't load ${url} (${res.status})`);
+  const total = Number(res.headers.get("content-length") ?? 0);
+  if (!res.body || !onProgress) return new Uint8Array(await res.arrayBuffer());
+  const reader = res.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let loaded = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+    loaded += value.length;
+    onProgress(loaded, total);
+  }
+  const out = new Uint8Array(loaded);
+  let offset = 0;
+  for (const c of chunks) {
+    out.set(c, offset);
+    offset += c.length;
+  }
+  return out;
+}
+
+/** Splits stats.bin into P(symptom | disease) and P(disease). */
+export function parseStats(meta: Meta, bytes: Uint8Array): Pick<EngineData, "pSymGivenDis" | "pDis"> {
+  const floats = new Float32Array(bytes.buffer, bytes.byteOffset, bytes.byteLength / 4);
+  const n = meta.nDiseases * meta.nSymptoms;
+  if (floats.length !== n + meta.nDiseases) throw new Error("stats.bin doesn't match meta.json; re-run export_web_assets.py");
+  return { pSymGivenDis: floats.slice(0, n), pDis: floats.slice(n) };
+}
+
+export interface Assets {
+  data: EngineData;
+  modelBytes: Uint8Array;
+}
+
+/** onProgress gets a 0..1 fraction of the model download, which is nearly all of the bytes. */
+export async function loadAssets(onProgress?: (fraction: number) => void): Promise<Assets> {
+  const dir = `${BASE_PATH}/model`;
+  const [meta, stats, modelBytes] = await Promise.all([
+    fetch(`${dir}/meta.json`).then((r) => {
+      if (!r.ok) throw new Error(`Couldn't load meta.json (${r.status})`);
+      return r.json() as Promise<Meta>;
+    }),
+    fetchBytes(`${dir}/stats.bin`),
+    fetchBytes(`${dir}/model.onnx`, (loaded, total) => onProgress?.(total ? loaded / total : 0)),
+  ]);
+  return { data: { meta, ...parseStats(meta, stats) }, modelBytes };
+}
