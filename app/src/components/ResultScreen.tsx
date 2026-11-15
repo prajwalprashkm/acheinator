@@ -1,5 +1,7 @@
+import type { DiseaseSymptomRow } from "@/engine/diseaseSymptoms";
 import type { Guess, Meta } from "@/engine/types";
 import { useKeys } from "@/game/useKeys";
+import { DiseaseSymptomList } from "./DiseaseSymptomList";
 import { Disclaimer } from "./Disclaimer";
 import { Button } from "./ui/Button";
 import { Card } from "./ui/Card";
@@ -29,15 +31,26 @@ interface Props {
   questionsAsked: number;
   stopReason: string | null;
   busy: boolean;
+  diseaseSymptoms: (diseaseIndex: number) => DiseaseSymptomRow[];
   onKeepAsking: () => void;
   onPlayAgain: () => void;
 }
 
-export function ResultScreen({ meta, guesses, questionsAsked, stopReason, busy, onKeepAsking, onPlayAgain }: Props) {
+export function ResultScreen({
+  meta,
+  guesses,
+  questionsAsked,
+  stopReason,
+  busy,
+  diseaseSymptoms,
+  onKeepAsking,
+  onPlayAgain,
+}: Props) {
   useKeys({ k: onKeepAsking, enter: onPlayAgain }, !busy);
   const [top, ...others] = guesses;
   if (!top) return null;
   const info = meta.info[String(top.index)];
+  const symptomRows = diseaseSymptoms(top.index);
 
   return (
     <Card aria-live="polite">
@@ -65,6 +78,8 @@ export function ResultScreen({ meta, guesses, questionsAsked, stopReason, busy, 
       <div className="mt-4">
         <LearnMore label={top.label} />
       </div>
+
+      <DiseaseSymptomList diseaseLabel={top.label} rows={symptomRows} />
 
       {others.length > 0 && (
         <div className="mt-6 border-t border-line pt-4">

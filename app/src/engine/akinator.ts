@@ -3,6 +3,7 @@
  * Kept line-for-line close to the Python so the parity test can compare them;
  * change both together.
  */
+import { buildDiseaseSymptomRows, type DiseaseSymptomRow } from "./diseaseSymptoms";
 import type { Age, Answer, EngineData, Guess, Meta, NetworkFn, Question, Sex, Step, StoppingRules, Suspicion } from "./types";
 
 const RULED_OUT_LOG = -50;
@@ -267,6 +268,20 @@ export class Akinator {
     const P = await this.probs();
     const order = Array.from(P.keys()).sort((a, b) => P[b] - P[a]).slice(0, k);
     return order.map((i) => ({ index: i, name: this.meta.diseases[i], label: this.meta.diseaseLabels[i], p: P[i] }));
+  }
+
+  /** Common symptoms for a disease vs what the player already answered (from stats + current flags). */
+  diseaseSymptomBreakdown(diseaseIndex: number, opts?: { minP?: number; max?: number }): DiseaseSymptomRow[] {
+    return buildDiseaseSymptomRows(
+      this.psd,
+      this.S,
+      this.meta.symptomLabels,
+      diseaseIndex,
+      this.yes,
+      this.no,
+      this.asked,
+      opts,
+    );
   }
 
   // ----- choosing questions -----

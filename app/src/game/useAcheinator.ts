@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useReducer, useRef } from "react";
 import { Akinator, type HistoryEntry } from "@/engine/akinator";
+import type { DiseaseSymptomRow } from "@/engine/diseaseSymptoms";
 import { loadAssets } from "@/engine/loadAssets";
 import { createBrowserNetwork } from "@/engine/network";
 import type { Age, Answer, Guess, Meta, Question, Sex, Suspicion } from "@/engine/types";
@@ -223,6 +224,10 @@ export function useAcheinator() {
     dispatch({ type: "update", patch: { phase: state.resumePhase, suspicion: null } });
   }, [state.resumePhase]);
 
+  const diseaseSymptoms = useCallback((diseaseIndex: number): DiseaseSymptomRow[] => {
+    return engine.current?.diseaseSymptomBreakdown(diseaseIndex) ?? [];
+  }, []);
+
   return {
     state,
     start,
@@ -236,6 +241,7 @@ export function useAcheinator() {
     keepAsking,
     playAgain,
     continueAnyway,
+    diseaseSymptoms,
   };
 }
 

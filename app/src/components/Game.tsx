@@ -156,6 +156,7 @@ function ScreenContent({ g }: { g: ReturnType<typeof useAcheinator> }) {
             questionsAsked={s.history.length}
             stopReason={s.stopReason}
             busy={s.busy}
+            diseaseSymptoms={g.diseaseSymptoms}
             onKeepAsking={g.keepAsking}
             onPlayAgain={g.playAgain}
           />
