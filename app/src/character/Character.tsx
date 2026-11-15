@@ -153,7 +153,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
 
   function startIdleFloat() {
     clearFloatTimer();
-    if (reducedMotion() || busyRef.current !== null || loading) return;
+    if (reducedMotion() || busyRef.current !== null) return;
     const v = videos.current[IDLE_LOOP];
     if (!v) return;
 
@@ -169,7 +169,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
   }
 
   function onIdleFloatPlaying() {
-    if (busyRef.current !== null || loading) return;
+    if (busyRef.current !== null) return;
     const v = videos.current[IDLE_LOOP];
     if (!v || v.paused) return;
     revealAfterFirstFrame(v, () => {
@@ -219,7 +219,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
     waitingGestureRef.current = false;
     if (clip === LOADING_LOOP) {
       if (reducedMotion()) setSurface("still");
-      else startIdleFloat();
+      else await enterRestState();
       return;
     }
     try {
@@ -233,7 +233,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
 
   async function enterRestState() {
     setSurface("still");
-    if (reducedMotion() || loading) return;
+    if (reducedMotion()) return;
     if (Math.random() < IDLE_STILL_AFTER_GESTURE) queueFloatLater();
     else startIdleFloat();
   }
@@ -254,14 +254,13 @@ export function Character({ ref, loading, className = "", style }: Props) {
       clearFloatTimer();
       videos.current[IDLE_LOOP]?.pause();
       playGesture(LOADING_LOOP);
-    } else if (!loopLoading && LOADING_LOOP && busyRef.current === LOADING_LOOP) {
-      void returnFromGesture(LOADING_LOOP);
     }
+    // When loading finishes, let the current thinking clip play out; onGestureEnded hands off.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loopLoading, ext]);
 
   useEffect(() => {
-    if (!ext || loading || idleBootedRef.current) return;
+    if (!ext || idleBootedRef.current) return;
     idleBootedRef.current = true;
     if (reducedMotion() || busyRef.current !== null) return;
     startIdleFloat();
@@ -269,8 +268,12 @@ export function Character({ ref, loading, className = "", style }: Props) {
   }, [ext, loading]);
 
   function onGestureEnded(clip: GestureClipId) {
-    if (LOADING_LOOP && clip === LOADING_LOOP && loopLoading) playGesture(LOADING_LOOP);
-    else void returnFromGesture(clip);
+    if (LOADING_LOOP && clip === LOADING_LOOP) {
+      if (loopLoading) playGesture(LOADING_LOOP);
+      else void returnFromGesture(clip);
+      return;
+    }
+    void returnFromGesture(clip);
   }
 
   function isGesture(clip: ClipId): clip is GestureClipId {

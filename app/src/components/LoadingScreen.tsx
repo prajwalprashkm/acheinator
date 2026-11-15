@@ -11,7 +11,7 @@ export function LoadingScreen({ progress, error }: { progress: number; error: st
       </Card>
     );
   }
-  const pct = Math.round(progress * 100);
+  const pct = Math.min(100, Math.round(Math.min(1, Math.max(0, progress)) * 100));
   return (
     <Card>
       <h2 className="text-lg font-semibold">Loading the model…</h2>

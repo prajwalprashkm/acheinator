@@ -44,7 +44,8 @@ export const REACTIONS: Record<Moment, Reaction> = {
 
 export const CONFIDENT = 0.7;
 
-export const LOADING_LOOP: GestureClipId | null = "thinking-chin";
+/** Clip while assets load; null = use idle-float from the first frame (loads are usually quick). */
+export const LOADING_LOOP: GestureClipId | null = null;
 
 export const PLAYBACK_RATE = 1;
 

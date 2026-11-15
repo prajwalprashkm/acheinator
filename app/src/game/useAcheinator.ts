@@ -64,7 +64,7 @@ type Action =
 function reducer(state: GameState, a: Action): GameState {
   switch (a.type) {
     case "progress":
-      return { ...state, loadProgress: a.value };
+      return { ...state, loadProgress: Math.min(1, Math.max(0, a.value)) };
     case "loaded":
       return { ...state, phase: "intro", loadProgress: 1, meta: a.meta };
     case "error":

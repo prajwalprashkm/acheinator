@@ -49,7 +49,9 @@ export async function loadAssets(onProgress?: (fraction: number) => void): Promi
       return r.json() as Promise<Meta>;
     }),
     fetchBytes(`${dir}/stats.bin`),
-    fetchBytes(`${dir}/model.onnx`, (loaded, total) => onProgress?.(total ? loaded / total : 0)),
+    fetchBytes(`${dir}/model.onnx`, (loaded, total) =>
+      onProgress?.(total ? Math.min(1, loaded / total) : 0),
+    ),
   ]);
   return { data: { meta, ...parseStats(meta, stats) }, modelBytes };
 }
