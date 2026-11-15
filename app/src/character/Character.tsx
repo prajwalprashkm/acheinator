@@ -1,6 +1,14 @@
 "use client";
 
-import { useEffect, useImperativeHandle, useRef, useState, useSyncExternalStore, type Ref } from "react";
+import {
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type CSSProperties,
+  type Ref,
+} from "react";
 import { BASE_PATH } from "@/engine/loadAssets";
 import {
   CLIPS,
@@ -10,8 +18,9 @@ import {
   IDLE_REST_TOLERANCE_SEC,
   IDLE_STILL_AFTER_GESTURE,
   IDLE_STILL_MAX_MS,
-  IDLE_STILL_ON_START,
   LOADING_LOOP,
+  MASCOT_ART_SCALE,
+  MASCOT_CLIP_INSET_PERCENT,
   PLAYBACK_RATE,
   pickClip,
   type ClipId,
@@ -27,6 +36,7 @@ interface Props {
   ref?: Ref<CharacterHandle>;
   loading: boolean;
   className?: string;
+  style?: CSSProperties;
 }
 
 const DIR = `${BASE_PATH}/character`;
@@ -72,7 +82,7 @@ function nearIdleRest(time: number) {
   );
 }
 
-export function Character({ ref, loading, className = "" }: Props) {
+export function Character({ ref, loading, className = "", style }: Props) {
   const ext = useSyncExternalStore(noSubscribe, clipExtension, () => null);
   const idleRef = useRef<HTMLImageElement>(null);
   const videos = useRef<Partial<Record<ClipId, HTMLVideoElement>>>({});
@@ -204,15 +214,20 @@ export function Character({ ref, loading, className = "" }: Props) {
 
   async function returnFromGesture(clip: GestureClipId) {
     if (busyRef.current !== clip) return;
+    videos.current[clip]?.pause();
+    busyRef.current = null;
+    waitingGestureRef.current = false;
+    if (clip === LOADING_LOOP) {
+      if (reducedMotion()) setSurface("still");
+      else startIdleFloat();
+      return;
+    }
     try {
       await ensureIdleReady(idleRef.current);
     } catch {
       /* ok */
     }
-    if (busyRef.current !== clip) return;
-    videos.current[clip]?.pause();
-    busyRef.current = null;
-    waitingGestureRef.current = false;
+    if (busyRef.current !== null) return;
     await enterRestState();
   }
 
@@ -238,7 +253,6 @@ export function Character({ ref, loading, className = "" }: Props) {
     if (loopLoading && ext && LOADING_LOOP) {
       clearFloatTimer();
       videos.current[IDLE_LOOP]?.pause();
-      setSurface("still");
       playGesture(LOADING_LOOP);
     } else if (!loopLoading && LOADING_LOOP && busyRef.current === LOADING_LOOP) {
       void returnFromGesture(LOADING_LOOP);
@@ -249,9 +263,8 @@ export function Character({ ref, loading, className = "" }: Props) {
   useEffect(() => {
     if (!ext || loading || idleBootedRef.current) return;
     idleBootedRef.current = true;
-    if (reducedMotion()) return;
-    if (Math.random() < IDLE_STILL_ON_START) queueFloatLater();
-    else startIdleFloat();
+    if (reducedMotion() || busyRef.current !== null) return;
+    startIdleFloat();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ext, loading]);
 
@@ -265,8 +278,19 @@ export function Character({ ref, loading, className = "" }: Props) {
   }
 
   return (
-    <div className={`pointer-events-none relative aspect-square select-none ${className}`} aria-hidden>
-      <div className="absolute inset-0 scale-[1.35]">
+    <div
+      className={`pointer-events-none relative isolate z-0 box-border aspect-square select-none overflow-hidden contain-paint ${className}`}
+      style={{
+        ...style,
+        padding: `${MASCOT_CLIP_INSET_PERCENT}%`,
+      }}
+      aria-hidden
+    >
+      <div className="relative h-full w-full overflow-hidden">
+        <div
+          className="absolute inset-0 origin-center"
+          style={{ transform: `scale(${MASCOT_ART_SCALE})` }}
+        >
         {/* eslint-disable-next-line @next/next/no-img-element -- static export, already 480px */}
         <img
           ref={idleRef}
@@ -303,6 +327,7 @@ export function Character({ ref, loading, className = "" }: Props) {
               style={{ opacity: surface === clip ? 1 : 0, transition: "none" }}
             />
           ))}
+        </div>
       </div>
     </div>
   );

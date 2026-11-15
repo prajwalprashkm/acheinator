@@ -58,11 +58,14 @@ export const IDLE_REST_TOLERANCE_SEC = 0.22;
 /** After a gesture, chance we hold idle.png before starting idle-float again. */
 export const IDLE_STILL_AFTER_GESTURE = 0.45;
 
-/** On first load (after the model), chance we start on idle.png instead of idle-float. */
-export const IDLE_STILL_ON_START = 0.35;
-
-/** If we're holding the still, start idle-float automatically after this long anyway. */
+/** If we're holding the still after a gesture, start idle-float automatically after this long anyway. */
 export const IDLE_STILL_MAX_MS = 12_000;
+
+/** How much the 480×480 art is scaled inside its slot (lower = less head/tail clipped). */
+export const MASCOT_ART_SCALE = 1.0;
+
+/** Padding inside the mascot square before overflow clips (percent of slot width). */
+export const MASCOT_CLIP_INSET_PERCENT = 0;
 
 export function pickClip(moment: Moment, random = Math.random()): GestureClipId | null {
   let r = random;

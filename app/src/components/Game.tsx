@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Character, type CharacterHandle } from "@/character/Character";
+import { MASCOT_MAX_PX, usePhoneMascotSize } from "@/character/usePhoneMascotSize";
 import { CONFIDENT } from "@/character/config";
 import type { Age, Sex } from "@/engine/types";
 import { useAcheinator, type GameState } from "@/game/useAcheinator";
@@ -22,12 +23,26 @@ export function Game() {
   const { state: s } = g;
   const character = useReactions(s);
   const loading = s.phase === "loading" || s.phase === "error" || !s.meta;
+  const uiRef = useRef<HTMLDivElement>(null);
+  const phoneSize = usePhoneMascotSize(uiRef, s.phase);
 
   return (
-    <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-2 md:flex-row md:items-start md:justify-center md:gap-4">
-      {/* first child in every phase, so the videos stay loaded */}
-      <Character ref={character} loading={s.phase === "loading"} className="my-2 w-28 shrink-0 sm:w-36 md:my-0 md:w-48" />
-      <Screen g={g} narrow={loading || ["intro", "age", "sex"].includes(s.phase)} />
+    <div className="mx-auto flex min-h-0 w-full max-w-7xl flex-col lg:block">
+      <div className="flex min-h-0 flex-col items-center gap-2.5 lg:grid lg:grid-cols-[minmax(11rem,22rem)_minmax(0,1fr)] lg:items-start lg:gap-8 xl:grid-cols-[24rem_minmax(0,1fr)]">
+        <Character
+          ref={character}
+          loading={s.phase === "loading"}
+          className="mx-auto w-full shrink-0 overflow-hidden lg:sticky lg:top-6 lg:max-h-[min(64dvh,26rem)]"
+          style={
+            phoneSize !== undefined
+              ? { width: phoneSize, height: phoneSize, maxWidth: `min(92vw, ${MASCOT_MAX_PX}px)` }
+              : undefined
+          }
+        />
+        <div ref={uiRef} className="relative z-10 w-full min-w-0 min-h-0 lg:overflow-visible">
+          <Screen g={g} narrow={loading || ["intro", "age", "sex"].includes(s.phase)} scrollOnPhone />
+        </div>
+      </div>
     </div>
   );
 }
@@ -52,9 +67,23 @@ function useReactions(s: GameState) {
   return character;
 }
 
-function Screen({ g, narrow }: { g: ReturnType<typeof useAcheinator>; narrow: boolean }) {
+function Screen({
+  g,
+  narrow,
+  scrollOnPhone,
+}: {
+  g: ReturnType<typeof useAcheinator>;
+  narrow: boolean;
+  scrollOnPhone: boolean;
+}) {
   return (
-    <div className={narrow ? "w-full max-w-xl" : "w-full min-w-0 flex-1"}>
+    <div
+      className={
+        narrow
+          ? "mx-auto w-full max-w-xl lg:mx-0"
+          : `w-full min-w-0${scrollOnPhone ? " max-lg:max-h-[min(58dvh,40rem)] max-lg:overflow-y-auto max-lg:overscroll-y-contain" : ""}`
+      }
+    >
       <ScreenContent g={g} />
     </div>
   );
