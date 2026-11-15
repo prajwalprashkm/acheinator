@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { Character, type CharacterHandle } from "@/character/Character";
 import { MASCOT_MAX_PX, usePhoneMascotSize } from "@/character/usePhoneMascotSize";
+import { pickAnswerReaction } from "@/character/answerReactions";
 import { CONFIDENT } from "@/character/config";
 import type { Age, Sex } from "@/engine/types";
 import { useAcheinator, type GameState } from "@/game/useAcheinator";
@@ -51,18 +52,30 @@ export function Game() {
 function useReactions(s: GameState) {
   const character = useRef<CharacterHandle>(null);
   const prev = useRef({ phase: s.phase, answered: s.history.length });
+  const prevTopP = useRef<number | null>(null);
   const topP = s.guesses[0]?.p ?? 0;
 
   useEffect(() => {
     const p = prev.current;
     const answered = s.history.length;
     prev.current = { phase: s.phase, answered };
+    if (answered === 0) prevTopP.current = null;
     if (s.phase === p.phase && answered === p.answered) return;
     const c = character.current;
     if (s.phase === "suspicious") c?.react("suspicious");
     else if (s.phase === "result" && p.phase !== "result") c?.react(topP >= CONFIDENT ? "confidentResult" : "result");
-    else if (s.phase === "asking" && answered > p.answered) c?.react("answer");
-  }, [s.phase, s.history.length, topP]);
+    else if (s.phase === "asking" && answered > p.answered) {
+      const last = s.history[answered - 1];
+      const clip = pickAnswerReaction({
+        lastAnswer: last?.answer ?? null,
+        history: s.history,
+        guesses: s.guesses,
+        prevTopP: prevTopP.current,
+      });
+      prevTopP.current = topP;
+      c?.react("answer", clip);
+    }
+  }, [s.phase, s.history.length, topP, s.guesses, s.history]);
 
   return character;
 }

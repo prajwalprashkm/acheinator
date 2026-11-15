@@ -27,9 +27,11 @@ import {
   type GestureClipId,
   type Moment,
 } from "./config";
+import { characterClipExtension } from "./clipFormat";
 
 export interface CharacterHandle {
-  react(moment: Moment): void;
+  /** For `answer`, pass clip from pickAnswerReaction; other moments pick from REACTIONS. */
+  react(moment: Moment, clip?: GestureClipId | null): void;
 }
 
 interface Props {
@@ -45,10 +47,6 @@ const DIR = `${BASE_PATH}/character`;
 type Surface = "still" | ClipId;
 
 const noSubscribe = () => () => {};
-
-function clipExtension() {
-  return navigator.vendor.startsWith("Apple") ? "mov" : "webm";
-}
 
 function reducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -83,7 +81,7 @@ function nearIdleRest(time: number) {
 }
 
 export function Character({ ref, loading, className = "", style }: Props) {
-  const ext = useSyncExternalStore(noSubscribe, clipExtension, () => null);
+  const ext = useSyncExternalStore(noSubscribe, characterClipExtension, () => null);
   const idleRef = useRef<HTMLImageElement>(null);
   const videos = useRef<Partial<Record<ClipId, HTMLVideoElement>>>({});
   const [surface, setSurface] = useState<Surface>("still");
@@ -92,6 +90,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
   const waitingGestureRef = useRef(false);
   const floatTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const idleBootedRef = useRef(false);
+  const pendingUnlockRef = useRef(false);
 
   function clearFloatTimer() {
     if (floatTimerRef.current) {
@@ -124,7 +123,10 @@ export function Character({ ref, loading, className = "", style }: Props) {
       v.playbackRate = PLAYBACK_RATE;
       v.loop = false;
       busyRef.current = clip;
-      v.play().catch(() => abortGesture(clip));
+      v.play().catch(() => {
+        pendingUnlockRef.current = true;
+        abortGesture(clip);
+      });
     };
 
     if (v.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) begin();
@@ -161,7 +163,10 @@ export function Character({ ref, loading, className = "", style }: Props) {
       v.loop = true;
       v.currentTime = 0;
       v.playbackRate = PLAYBACK_RATE;
-      v.play().catch(() => setSurface("still"));
+      v.play().catch(() => {
+        pendingUnlockRef.current = true;
+        setSurface("still");
+      });
     };
 
     if (v.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) begin();
@@ -239,9 +244,10 @@ export function Character({ ref, loading, className = "", style }: Props) {
   }
 
   useImperativeHandle(ref, () => ({
-    react(moment) {
+    react(moment, clipOverride) {
       if (busyRef.current !== null || waitingGestureRef.current) return;
-      const clip = pickClip(moment);
+      const clip =
+        moment === "answer" && clipOverride !== undefined ? clipOverride : pickClip(moment);
       if (!clip) return;
       clearFloatTimer();
       gestureFromIdle(clip);
@@ -260,12 +266,47 @@ export function Character({ ref, loading, className = "", style }: Props) {
   }, [loopLoading, ext]);
 
   useEffect(() => {
-    if (!ext || idleBootedRef.current) return;
-    idleBootedRef.current = true;
-    if (reducedMotion() || busyRef.current !== null) return;
-    startIdleFloat();
+    if (!ext) return;
+    let cancelled = false;
+    const boot = () => {
+      if (cancelled || idleBootedRef.current) return;
+      if (reducedMotion() || busyRef.current !== null) {
+        idleBootedRef.current = true;
+        return;
+      }
+      if (!videos.current[IDLE_LOOP]) {
+        requestAnimationFrame(boot);
+        return;
+      }
+      idleBootedRef.current = true;
+      startIdleFloat();
+    };
+    boot();
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ext, loading]);
+  }, [ext]);
+
+  /** iOS often blocks muted autoplay until the first tap anywhere on the page. */
+  useEffect(() => {
+    if (!ext) return;
+    const unlock = () => {
+      if (reducedMotion() || busyRef.current !== null) return;
+      const v = videos.current[IDLE_LOOP];
+      if (!pendingUnlockRef.current && v && !v.paused) return;
+      pendingUnlockRef.current = false;
+      startIdleFloat();
+    };
+    document.addEventListener("touchstart", unlock, { passive: true });
+    document.addEventListener("click", unlock);
+    return () => {
+      document.removeEventListener("touchstart", unlock);
+      document.removeEventListener("click", unlock);
+    };
+    // surface omitted intentionally — unlock only needs latest stuck/autoplay state via refs
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ext]);
 
   function onGestureEnded(clip: GestureClipId) {
     if (LOADING_LOOP && clip === LOADING_LOOP) {

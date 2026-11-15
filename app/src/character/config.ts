@@ -27,16 +27,9 @@ export interface Reaction {
   chances: Partial<Record<GestureClipId, number>>;
 }
 
+/** Answer moments use pickAnswerReaction in answerReactions.ts (biased by history + guesses). */
 export const REACTIONS: Record<Moment, Reaction> = {
-  answer: {
-    chances: {
-      "thinking-chin": 0.12,
-      idea: 0.11,
-      "thumbs-up": 0.08,
-      confused: 0.06,
-      backflip: 0.01,
-    },
-  },
+  answer: { chances: {} },
   suspicious: { chances: { confused: 1 } },
   result: { chances: { idea: 1 } },
   confidentResult: { chances: { "thumbs-up": 1 } },
