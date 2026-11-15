@@ -34,13 +34,13 @@ jobs:
       - name: Check the browser engine still matches the Python engine
         run: npm test
 
-      - id: pages
-        uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v5
 
-      # base_path is "/<repo>" for username.github.io/<repo>, or "" for a custom domain / username.github.io repo
+      # Served from the root of https://acheinator.xyz (custom domain set in Settings > Pages).
+      # Without the custom domain this would be "/acheinator" (prajwalprashkm.github.io/acheinator).
       - run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_BASE_PATH: ""
 
       - uses: actions/upload-pages-artifact@v4
         with:
