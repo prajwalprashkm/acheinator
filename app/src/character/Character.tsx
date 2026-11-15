@@ -28,6 +28,7 @@ import {
   type Moment,
 } from "./config";
 import { characterClipExtension } from "./clipFormat";
+import { mustRevealVideoBeforePlay, revealAfterFirstFrame, unlockInlinePlayback } from "./playback";
 
 export interface CharacterHandle {
   /** For `answer`, pass clip from pickAnswerReaction; other moments pick from REACTIONS. */
@@ -63,15 +64,6 @@ async function ensureIdleReady(img: HTMLImageElement | null) {
   await img.decode();
 }
 
-function revealAfterFirstFrame(v: HTMLVideoElement, onReveal: () => void) {
-  const show = () => onReveal();
-  if (typeof v.requestVideoFrameCallback === "function") {
-    v.requestVideoFrameCallback(() => show());
-  } else {
-    requestAnimationFrame(() => requestAnimationFrame(show));
-  }
-}
-
 function nearIdleRest(time: number) {
   return IDLE_REST_TIMES.some(
     (r) =>
@@ -91,6 +83,8 @@ export function Character({ ref, loading, className = "", style }: Props) {
   const floatTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const idleBootedRef = useRef(false);
   const pendingUnlockRef = useRef(false);
+  const poolUnlockedRef = useRef(false);
+  const mobilePlayback = mustRevealVideoBeforePlay();
 
   function clearFloatTimer() {
     if (floatTimerRef.current) {
@@ -123,6 +117,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
       v.playbackRate = PLAYBACK_RATE;
       v.loop = false;
       busyRef.current = clip;
+      if (mustRevealVideoBeforePlay()) setSurface(clip);
       v.play().catch(() => {
         pendingUnlockRef.current = true;
         abortGesture(clip);
@@ -163,6 +158,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
       v.loop = true;
       v.currentTime = 0;
       v.playbackRate = PLAYBACK_RATE;
+      if (mustRevealVideoBeforePlay()) setSurface(IDLE_LOOP);
       v.play().catch(() => {
         pendingUnlockRef.current = true;
         setSurface("still");
@@ -294,11 +290,25 @@ export function Character({ ref, loading, className = "", style }: Props) {
     const unlock = () => {
       if (reducedMotion() || busyRef.current !== null) return;
       const v = videos.current[IDLE_LOOP];
-      if (!pendingUnlockRef.current && v && !v.paused) return;
+      if (!v) return;
+      if (!poolUnlockedRef.current) {
+        unlockInlinePlayback(Object.values(videos.current));
+        poolUnlockedRef.current = true;
+      }
+      const stuck = pendingUnlockRef.current || v.paused || v.ended;
+      if (!stuck) return;
       pendingUnlockRef.current = false;
-      startIdleFloat();
+      v.loop = true;
+      v.muted = true;
+      v.currentTime = 0;
+      v.playbackRate = PLAYBACK_RATE;
+      if (mustRevealVideoBeforePlay()) setSurface(IDLE_LOOP);
+      v.play().catch(() => {
+        pendingUnlockRef.current = true;
+        setSurface("still");
+      });
     };
-    document.addEventListener("touchstart", unlock, { passive: true });
+    document.addEventListener("touchstart", unlock, { passive: true, capture: true });
     document.addEventListener("click", unlock);
     return () => {
       document.removeEventListener("touchstart", unlock);
@@ -323,7 +333,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
 
   return (
     <div
-      className={`pointer-events-none relative isolate z-0 box-border aspect-square select-none overflow-hidden contain-paint ${className}`}
+      className={`pointer-events-none relative isolate z-0 box-border aspect-square select-none overflow-hidden ${className}`}
       style={{
         ...style,
         padding: `${MASCOT_CLIP_INSET_PERCENT}%`,
@@ -351,15 +361,25 @@ export function Character({ ref, loading, className = "", style }: Props) {
             <video
               key={clip}
               ref={(el) => {
-                if (el) videos.current[clip] = el;
-                else delete videos.current[clip];
+                if (el) {
+                  el.muted = true;
+                  videos.current[clip] = el;
+                } else delete videos.current[clip];
               }}
               src={`${DIR}/${clip}.${ext}`}
               muted
               playsInline
+              // eslint-disable-next-line react/no-unknown-property -- WebKit inline playback
+              webkit-playsinline=""
               disablePictureInPicture
               loop={clip === IDLE_LOOP}
-              preload={clip === IDLE_LOOP || clip === LOADING_LOOP ? "auto" : loading ? "none" : "auto"}
+              preload={
+                mobilePlayback || clip === IDLE_LOOP || clip === LOADING_LOOP
+                  ? "auto"
+                  : loading
+                    ? "none"
+                    : "auto"
+              }
               onPlaying={() => {
                 if (clip === IDLE_LOOP) onIdleFloatPlaying();
                 else if (isGesture(clip)) onGesturePlaying(clip);

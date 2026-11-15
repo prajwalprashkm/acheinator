@@ -27,8 +27,9 @@ for webm in "${clips[@]}"; do
   id=$(basename "$webm" .webm)
   cp "$webm" "$OUT/$id.webm"
   # libvpx-vp9 decoder: ffmpeg's built-in VP9 decoder drops the alpha channel.
+  # format=bgra keeps alpha; plain pix_fmt on output was dropping to yuv420p (opaque on iOS).
   ffmpeg -hide_banner -loglevel error -y -c:v libvpx-vp9 -i "$webm" \
-    -pix_fmt bgra -c:v hevc_videotoolbox -allow_sw 1 -alpha_quality 0.75 -tag:v hvc1 -b:v 1500k -an \
+    -vf format=bgra -pix_fmt bgra -c:v hevc_videotoolbox -allow_sw 1 -alpha_quality 0.75 -tag:v hvc1 -b:v 1500k -an \
     "$OUT/$id.mov"
   echo "  $id"
 done
