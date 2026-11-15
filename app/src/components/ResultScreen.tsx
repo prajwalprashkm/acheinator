@@ -2,7 +2,6 @@ import type { DiseaseSymptomRow } from "@/engine/diseaseSymptoms";
 import type { Guess, Meta } from "@/engine/types";
 import { useKeys } from "@/game/useKeys";
 import { DiseaseSymptomList } from "./DiseaseSymptomList";
-import { Disclaimer } from "./Disclaimer";
 import { Button } from "./ui/Button";
 import { Card } from "./ui/Card";
 
