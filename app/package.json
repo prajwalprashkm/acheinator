@@ -7,7 +7,8 @@
     "build": "next build",
     "preview": "serve out",
     "test": "vitest run",
-    "lint": "eslint"
+    "lint": "eslint",
+    "animations": "bash scripts/import-animations.sh"
   },
   "dependencies": {
     "@fontsource-variable/atkinson-hyperlegible-next": "^5.3.0",
