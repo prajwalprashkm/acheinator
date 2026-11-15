@@ -1,5 +1,7 @@
-/** WebM VP9 alpha works in Chrome/Firefox; iOS WebKit (all phone browsers) need .mov HEVC alpha. */
-export function characterClipExtension(): "mov" | "webm" {
+/** WebM VP9 alpha on Chrome/Firefox; HEVC .mov with alpha on WebKit (Safari / iOS). */
+export type CharacterClipExt = "webm" | "mov";
+
+export function characterClipExtension(): CharacterClipExt {
   if (typeof navigator === "undefined") return "webm";
   const ua = navigator.userAgent;
   const ios =

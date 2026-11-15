@@ -190,7 +190,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
     const v = videos.current[IDLE_LOOP];
     const go = () => {
       waitingGestureRef.current = false;
-      void pauseAtStill(() => playGesture(clip));
+      void pauseAtStill(() => void playGesture(clip));
     };
 
     if (surface !== IDLE_LOOP || !v || v.paused) {
@@ -269,7 +269,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
     if (!ext) return;
     let cancelled = false;
     const boot = () => {
-      if (cancelled || idleBootedRef.current) return;
+      if (cancelled) return;
       if (reducedMotion() || busyRef.current !== null) {
         idleBootedRef.current = true;
         return;
@@ -281,9 +281,11 @@ export function Character({ ref, loading, className = "", style }: Props) {
       idleBootedRef.current = true;
       startIdleFloat();
     };
+    idleBootedRef.current = false;
     boot();
     return () => {
       cancelled = true;
+      idleBootedRef.current = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ext]);
@@ -344,9 +346,9 @@ export function Character({ ref, loading, className = "", style }: Props) {
       }}
       aria-hidden
     >
-      <div className="relative h-full w-full overflow-hidden bg-transparent">
+      <div className="character-stage relative h-full w-full overflow-hidden bg-bg isolate">
         <div
-          className="absolute inset-0 origin-center bg-transparent"
+          className="absolute inset-0 origin-center"
           style={{ transform: `scale(${MASCOT_ART_SCALE}) translateZ(0)` }}
         >
         {/* eslint-disable-next-line @next/next/no-img-element -- static export, already 480px */}
@@ -356,7 +358,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
           alt=""
           width={480}
           height={480}
-          className="absolute inset-0 size-full object-contain"
+          className="character-art absolute inset-0 size-full object-contain"
           style={{
             ...mediaLayerStyle(surface === "still"),
             transition: "none",
@@ -394,7 +396,7 @@ export function Character({ ref, loading, className = "", style }: Props) {
               onEnded={() => {
                 if (isGesture(clip)) onGestureEnded(clip);
               }}
-              className="absolute inset-0 size-full object-contain bg-transparent"
+              className="character-art absolute inset-0 size-full object-contain"
               style={{
                 ...mediaLayerStyle(surface === clip),
                 transition: "none",

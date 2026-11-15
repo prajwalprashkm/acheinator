@@ -3,7 +3,7 @@
  *
  * Workflow:
  *   1. Put or update clips in animations/symptomator/clips/<id>.webm (+ idle PNG in reference/).
- *   2. From app/: npm run animations  → copies into public/character/ and builds Safari .mov files.
+ *   2. From app/: npm run animations  → copies into public/character/ (.webm + .mov for WebKit).
  *   3. List every <id>.webm here in CLIPS / GESTURE_CLIPS (and wire REACTIONS if it's a gesture).
  *
  * The app never reads animations/ at runtime; only public/character/ is deployed (see next build).
@@ -44,6 +44,13 @@ export const PLAYBACK_RATE = 1;
 
 /** Length of idle-float.webm (seconds). */
 export const IDLE_DURATION_SEC = 6;
+
+/** One-shot clip length (seconds); documentation / tooling. Video uses onEnded. Match each .webm/.mov. */
+export const GESTURE_CLIP_DURATION_SEC = 6.05;
+
+export const GESTURE_DURATION_SEC: Record<GestureClipId, number> = Object.fromEntries(
+  GESTURE_CLIPS.map((c) => [c, GESTURE_CLIP_DURATION_SEC]),
+) as Record<GestureClipId, number>;
 
 /** Seconds in the idle loop that match idle.png — safe to cut to a gesture. */
 export const IDLE_REST_TIMES = [0, 3] as const;

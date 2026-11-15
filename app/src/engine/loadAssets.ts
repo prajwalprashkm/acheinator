@@ -3,6 +3,34 @@ import type { EngineData, Meta } from "./types";
 
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
+/** When the host omits Content-Length (common on static hosts), infer progress from this. */
+const MODEL_BYTES_HINT = 14_535_798;
+
+type ProgressFn = (fraction: number) => void;
+
+let assetsOnce: Promise<Assets> | null = null;
+const progressSubs = new Set<ProgressFn>();
+
+function notifyProgress(f: number) {
+  const v = Math.min(1, Math.max(0, f));
+  for (const fn of progressSubs) fn(v);
+}
+
+/** Single in-flight load (avoids duplicate downloads when React remounts the hook). */
+export function loadAssetsOnce(onProgress?: ProgressFn): Promise<Assets> {
+  if (onProgress) progressSubs.add(onProgress);
+  if (!assetsOnce) {
+    assetsOnce = loadAssets((f) => notifyProgress(f)).finally(() => {
+      assetsOnce = null;
+    });
+  }
+  return assetsOnce;
+}
+
+export function releaseLoadProgress(onProgress: ProgressFn) {
+  progressSubs.delete(onProgress);
+}
+
 /** Fetches a file, reporting bytes received so far (total may be 0 if the server doesn't say). */
 async function fetchBytes(url: string, onProgress?: (loaded: number, total: number) => void): Promise<Uint8Array> {
   const res = await fetch(url);
@@ -58,12 +86,15 @@ export async function loadAssets(onProgress?: (fraction: number) => void): Promi
     return { data: { meta, ...parseStats(meta, stats) }, modelBytes };
   }
 
+  onProgress?.(0.02);
   const [stats, modelBytes] = await Promise.all([
     fetchBytes(`${dir}/stats.bin`),
-    fetchBytes(`${dir}/model.onnx`, (loaded, total) =>
-      onProgress?.(total ? Math.min(1, loaded / total) : 0),
-    ),
+    fetchBytes(`${dir}/model.onnx`, (loaded, total) => {
+      const denom = total > 0 ? total : MODEL_BYTES_HINT;
+      onProgress?.(Math.min(0.98, loaded / denom));
+    }),
   ]);
+  onProgress?.(0.99);
 
   const statsCopy = stats.slice();
   const modelCopy = modelBytes.slice();

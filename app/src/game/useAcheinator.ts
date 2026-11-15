@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useReducer, useRef } from "react";
 import { Akinator, type HistoryEntry } from "@/engine/akinator";
 import type { DiseaseSymptomRow } from "@/engine/diseaseSymptoms";
-import { loadAssets } from "@/engine/loadAssets";
+import { loadAssetsOnce, releaseLoadProgress } from "@/engine/loadAssets";
 import { createBrowserNetwork } from "@/engine/network";
 import type { Age, Answer, Guess, Meta, Question, Sex, Suspicion } from "@/engine/types";
 
@@ -93,21 +93,27 @@ export function useAcheinator() {
   const trusted = useRef(false);
 
   useEffect(() => {
-    let cancelled = false;
+    let live = true;
+    const onProgress = (f: number) => {
+      if (live) dispatch({ type: "progress", value: f });
+    };
     (async () => {
       try {
-        const { data, modelBytes } = await loadAssets((f) => !cancelled && dispatch({ type: "progress", value: f }));
+        const { data, modelBytes } = await loadAssetsOnce(onProgress);
+        if (!live) return;
         const { input, output } = data.meta.network;
+        onProgress(0.99);
         const net = await createBrowserNetwork(modelBytes, input, output);
-        if (cancelled) return;
+        if (!live) return;
         engine.current = new Akinator(data, net);
         dispatch({ type: "loaded", meta: data.meta });
       } catch (e) {
-        if (!cancelled) dispatch({ type: "error", message: e instanceof Error ? e.message : String(e) });
+        if (live) dispatch({ type: "error", message: e instanceof Error ? e.message : String(e) });
       }
     })();
     return () => {
-      cancelled = true;
+      live = false;
+      releaseLoadProgress(onProgress);
     };
   }, []);
 
