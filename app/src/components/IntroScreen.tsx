@@ -1,4 +1,5 @@
 import { useKeys } from "@/game/useKeys";
+import { Disclaimer } from "./Disclaimer";
 import { Button } from "./ui/Button";
 import { Card } from "./ui/Card";
 
@@ -16,6 +17,7 @@ export function IntroScreen({ onStart }: { onStart: () => void }) {
         <li>You can undo or change any earlier answer.</li>
         <li>Everything runs in your browser. Nothing you answer is sent anywhere.</li>
       </ul>
+      <Disclaimer className="mt-4" />
       <Button variant="primary" className="mt-6 w-full sm:w-auto" onClick={onStart} shortcut="Enter">
         Start
       </Button>
