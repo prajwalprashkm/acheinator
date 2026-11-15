@@ -329,19 +329,25 @@ export function Character({ ref, loading, className = "", style }: Props) {
     return clip !== IDLE_LOOP;
   }
 
+  function mediaLayerStyle(active: boolean): CSSProperties {
+    if (active) return { opacity: 1, visibility: "visible" };
+    if (mobilePlayback) return { opacity: 0, visibility: "hidden", pointerEvents: "none" };
+    return { opacity: 0, visibility: "visible", pointerEvents: "none" };
+  }
+
   return (
     <div
-      className={`pointer-events-none relative isolate z-0 box-border aspect-square select-none overflow-hidden ${className}`}
+      className={`acheinator-character pointer-events-none relative z-0 box-border aspect-square select-none overflow-hidden bg-transparent ${className}`}
       style={{
         ...style,
         padding: `${MASCOT_CLIP_INSET_PERCENT}%`,
       }}
       aria-hidden
     >
-      <div className="relative h-full w-full overflow-hidden">
+      <div className="relative h-full w-full overflow-hidden bg-transparent">
         <div
-          className="absolute inset-0 origin-center"
-          style={{ transform: `scale(${MASCOT_ART_SCALE})` }}
+          className="absolute inset-0 origin-center bg-transparent"
+          style={{ transform: `scale(${MASCOT_ART_SCALE}) translateZ(0)` }}
         >
         {/* eslint-disable-next-line @next/next/no-img-element -- static export, already 480px */}
         <img
@@ -351,7 +357,10 @@ export function Character({ ref, loading, className = "", style }: Props) {
           width={480}
           height={480}
           className="absolute inset-0 size-full object-contain"
-          style={{ opacity: surface === "still" ? 1 : 0, transition: "none" }}
+          style={{
+            ...mediaLayerStyle(surface === "still"),
+            transition: "none",
+          }}
           draggable={false}
         />
         {ext &&
@@ -385,8 +394,11 @@ export function Character({ ref, loading, className = "", style }: Props) {
               onEnded={() => {
                 if (isGesture(clip)) onGestureEnded(clip);
               }}
-              className="absolute inset-0 size-full object-contain"
-              style={{ opacity: surface === clip ? 1 : 0, transition: "none" }}
+              className="absolute inset-0 size-full object-contain bg-transparent"
+              style={{
+                ...mediaLayerStyle(surface === clip),
+                transition: "none",
+              }}
             />
           ))}
         </div>

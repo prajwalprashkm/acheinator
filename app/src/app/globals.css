@@ -65,3 +65,12 @@ body {
     transition: none !important;
   }
 }
+
+/* WebKit composites every full-rect <video> layer; hide inactive layers to avoid a faint box around the genie. */
+@media (max-width: 1023px) {
+  .acheinator-character video {
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+}
