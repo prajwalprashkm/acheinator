@@ -105,7 +105,6 @@ export function ResultScreen({
           Play again
         </Button>
       </div>
-      <Disclaimer className="mt-6" />
     </Card>
   );
 }

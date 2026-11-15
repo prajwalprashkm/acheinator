@@ -1,3 +1,4 @@
+import { modelCacheKey, readCachedModel, writeCachedModel } from "./modelCache";
 import type { EngineData, Meta } from "./types";
 
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -43,15 +44,36 @@ export interface Assets {
 /** onProgress gets a 0..1 fraction of the model download, which is nearly all of the bytes. */
 export async function loadAssets(onProgress?: (fraction: number) => void): Promise<Assets> {
   const dir = `${BASE_PATH}/model`;
-  const [meta, stats, modelBytes] = await Promise.all([
-    fetch(`${dir}/meta.json`).then((r) => {
-      if (!r.ok) throw new Error(`Couldn't load meta.json (${r.status})`);
-      return r.json() as Promise<Meta>;
-    }),
+  const meta = await fetch(`${dir}/meta.json`).then((r) => {
+    if (!r.ok) throw new Error(`Couldn't load meta.json (${r.status})`);
+    return r.json() as Promise<Meta>;
+  });
+
+  const cacheKey = modelCacheKey(meta);
+  const cached = await readCachedModel(cacheKey);
+  if (cached) {
+    onProgress?.(1);
+    const stats = new Uint8Array(cached.stats);
+    const modelBytes = new Uint8Array(cached.model);
+    return { data: { meta, ...parseStats(meta, stats) }, modelBytes };
+  }
+
+  const [stats, modelBytes] = await Promise.all([
     fetchBytes(`${dir}/stats.bin`),
     fetchBytes(`${dir}/model.onnx`, (loaded, total) =>
       onProgress?.(total ? Math.min(1, loaded / total) : 0),
     ),
   ]);
+
+  const statsCopy = stats.slice();
+  const modelCopy = modelBytes.slice();
+  void writeCachedModel({
+    schema: 1,
+    key: cacheKey,
+    meta,
+    stats: statsCopy.buffer.slice(statsCopy.byteOffset, statsCopy.byteOffset + statsCopy.byteLength),
+    model: modelCopy.buffer.slice(modelCopy.byteOffset, modelCopy.byteOffset + modelCopy.byteLength),
+  });
+
   return { data: { meta, ...parseStats(meta, stats) }, modelBytes };
 }
