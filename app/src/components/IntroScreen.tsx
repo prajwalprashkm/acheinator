@@ -1,5 +1,4 @@
 import { useKeys } from "@/game/useKeys";
-import { Disclaimer } from "./Disclaimer";
 import { Button } from "./ui/Button";
 import { Card } from "./ui/Card";
 
