@@ -15,11 +15,11 @@ export interface AnswerReactionContext {
 export const ANSWER_REACTION_CAP = 0.45;
 
 const BASE: Partial<Record<GestureClipId, number>> = {
-  "thinking-chin": 0.1,
-  idea: 0.05,
-  confused: 0.04,
-  "thumbs-up": 0.03,
-  backflip: 0.005,
+  "thinking-chin": 0.15,
+  idea: 0.075,
+  confused: 0.06,
+  "thumbs-up": 0.045,
+  backflip: 0.01,
 };
 
 function consecutiveNoBeforeLast(history: HistoryEntry[]): number {
