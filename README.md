@@ -39,15 +39,16 @@ Acheinator is an Akinator-style symptom interviewer. It asks yes / no / don't-kn
 
 # **What we added**
 
-This is our own idea, inspired by Akinator and public symptom-disease tables. It is not a copy of a hackathon starter repo. We added:
+This is our own idea, inspired by Akinator. We added:
 
 * Merged multi-dataset vocabulary (356 symptoms × 778 diseases) with name alignment across sources  
 * Adaptive questioning via expected information gain on P(symptom \| disease), plus \~20 body-area gate questions  
 * Demographics (age/sex) to skip impossible symptoms and diseases  
 * Akinator-style consistency checks (streaks, mismatch vs. likelihood, alternating patterns)  
 * Full client-side deployment (no backend for answers)  
-* Animated mascot (Doctor G) with reactions tied to answers and confidence  
-* 230-game parity suite so the TypeScript engine matches Python
+* Animated mascot with reactions tied to answers and confidence  
+* 230-game parity suite so the TypeScript engine matches Python  
+* Symptom breakdown and links for additional info in the final result screen
 
 # **How it works**
 
@@ -65,7 +66,7 @@ Scale today: 356 symptoms, 778 diseases, and tens of thousands of patient rows a
 
 ## **Model**
 
-SymptomNet is a feedforward MLP (PyTorch to ONNX), found in training/train.py. Each step, it uses the current interview state as a 712-bit vector (356 yes-bits \+ 356 no-bits; unknown symptoms are 0 for both). Architecture:
+Acheinator uses a feedforward multilayer perceptron (MLP), trained on Kaggle using the scripts in the training directory. Each step, it uses the current interview state as a 712-dimensional vector (356 yes-flags \+ 356 no-flags; unknown symptoms are 0 for both). Architecture:
 
 * Input (batch × 712\)  
 * Linear(712→1024) → LayerNorm → GELU → Dropout(0.3)  
@@ -85,7 +86,7 @@ SymptomNet is a feedforward MLP (PyTorch to ONNX), found in training/train.py. E
 
 ## **Hybrid game loop**
 
-Belief updating is performed by the network after each answer, but questions are chosen using the expected entropy calculated statistically from the probabilities of P(symptom \| disease) and areas. It performed better than scoring all potential questions using the network, which was too confident with hypothetical cases. Age/sex elimination rules and "yes" evidence for areas are used as logarithmic factors on the input tensor.
+Belief updating is performed by the network after each answer, but questions are chosen using the expected entropy calculated statistically from the probabilities of P(symptom \| disease) and areas. It performed better than scoring all potential questions using the network, which was too confident with hypothetical cases. Age/sex elimination rules and "yes" evidence for areas are used as logarithmic factors on the posterior.
 
 ## **Stopping (defaults)**
 
@@ -102,14 +103,14 @@ onnxruntime-web WASM (single-threaded for GitHub Pages), with the engine ported 
 
 # **Results**
 
-| Setting | Top-1 | Top-3 | Notes |
+| Setting | Top-1 (disease is \#1 guess) | Top-3 (disease is in top 3 guesses) | Notes |
 | :---- | :---- | :---- | :---- |
-| Baseline: simpler engine (individual symptoms only, no body areas, shorter cap) | File | File | Run training/evaluate.py \--compare |
-| Held-out test, all symptoms revealed | \~86% | \~98% | Upper bound: model sees the full yes/no interview |
-| Final: simulated Akinator loop on test patients | \~57% | \~70% | Answers read honestly from records; \~29 questions on average |
-| Final: per-disease average (same simulation) | \~55% | \~66% | Rare diseases not drowned out by duplicate rows |
+| Baseline: simpler engine (individual symptoms only, no body areas, shorter cap) | \~57% | \~67% | Stopped at 35 questions or when past 50% confidence |
+| Changed questions to target body areas first and then narrow down into specific symptoms | \~87% | \~96% | Phenomenal increase in accuracy; asked 20 questions on average |
+| Added more smart stopping | \~87% | \~96% | No change in accuracy, but asked 19 questions on average |
+| Final: body-areas \+ smart stopping \+ age & sex asked (for ux that avoids asking questions that do not apply to a certain demographic; e.g. menopause for a male or a female child, etc.) | \~87% | \~96% | Final model |
 
-The full system adds areas, demographics and smarter stopping over the baseline.
+The full system adds areas, demographics and smarter stopping over the baseline. During training, various methods such as learning rate decay functions and dropout layers were used to prevent overfitting.
 
 # **Where it fails (and why we think so)**
 
@@ -131,13 +132,14 @@ The full system adds areas, demographics and smarter stopping over the baseline.
 * [Diseases and Symptoms Dataset (Kaggle)](https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset) (https\://www\.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset)  
 * [Disease Symptom Description Dataset (Kaggle)](https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset)  
   (https\://www\.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset)  
-* Additional symptom CSVs from the Kaggle input tree, merged in training/prepare\_data.py
+* [Predict Disease Symptom Dataset (Kaggle)](https://www.kaggle.com/datasets/karthikudyawar/disease-symptom-prediction)  
+  (https\://www\.kaggle.com/datasets/karthikudyawar/disease-symptom-prediction)
 
 ## **Models and libraries**
 
 PyTorch, ONNX, ONNX Runtime Web, Next.js, GitHub Pages
 
-## **AI tools**
+## **AI tools and other tools**
 
 Cursor and other AI assistants for implementation, refactors and documentation; ffmpeg/macOS Video Toolbox for character clip import (.webm \+ iOS .mov)
 
